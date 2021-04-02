@@ -39,10 +39,11 @@
 }
 
 - (void)loadSceneList {
-    [[TuyaSmartSceneManager sharedInstance] getSceneListWithHomeId:[Home getCurrentHome].homeId success:^(NSArray<TuyaSmartSceneModel *> *list) {
-        self.sceneList = list;
+    id<TYSmartSceneBizProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYSmartSceneBizProtocol)];
+    [impl getSceneListWithHomeId:[Home getCurrentHome].homeId withSuccess:^(NSArray<TuyaSmartSceneModel *> * _Nonnull scenes) {
+        self.sceneList = scenes;
         [self.tableView reloadData];
-    } failure:^(NSError *error) {
+    } failure:^(NSError * _Nonnull error) {
         NSLog(@"get scene list failure: %@", error);
     }];
 }
