@@ -21,4 +21,5 @@ target 'tuya-bizbundle-ios-sample-objc_Example' do
   pod 'TuyaSmartOTABizBundle'
   pod 'TuyaSmartPanelBizBundle'
   pod 'TuyaSmartSceneBizBundle'
+  pod 'TYRCTScenePanelManager'
 end
