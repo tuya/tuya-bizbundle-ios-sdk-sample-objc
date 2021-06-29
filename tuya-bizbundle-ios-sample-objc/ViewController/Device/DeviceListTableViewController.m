@@ -120,13 +120,10 @@
         return;
     }
     
-//    id<TYRNCameraProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYRNCameraProtocol)];
-//    UIViewController *vc = [impl cameraRNPanelViewControllerWithDeviceId:deviceModel.devId];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
-    id<TYCameraProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYCameraProtocol)];
-    UIViewController *vc = [impl viewControllerWithDeviceId:deviceModel.devId uiName:deviceModel.uiName];
-    [self.navigationController pushViewController:vc animated:YES];
+    id<TYPanelProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYPanelProtocol)];
+    [impl getPanelViewControllerWithDeviceModel:deviceModel initialProps:nil contextProps:nil completionHandler:^(__kindof UIViewController * _Nullable panelViewController, NSError * _Nullable error) {
+        [self.navigationController pushViewController:panelViewController animated:YES];
+    }];
 }
 
 - (void)deviceGotoCameraNewPlayBackPanel:(TuyaSmartDeviceModel *)deviceModel {
