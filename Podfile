@@ -3,11 +3,11 @@ source 'https://cdn.cocoapods.org/'
 
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'tuya-bizbundle-ios-sample-objc_Example' do
   pod 'SVProgressHUD'
-  pod 'TuyaSmartHomeKit', '3.24.0'
+  pod 'TuyaSmartHomeKit'
   pod 'TuyaSmartActivatorBizBundle'
   pod 'TuyaSmartCameraPanelBizBundle'
   pod 'TuyaSmartCameraRNPanelBizBundle'
