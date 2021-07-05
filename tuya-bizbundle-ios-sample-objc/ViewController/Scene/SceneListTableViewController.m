@@ -11,6 +11,8 @@
 #import "Alert.h"
 #import <TuyaSmartBizCore/TuyaSmartBizCore.h>
 #import <TYModuleServices/TYModuleServices.h>
+#import <TuyaSmartBizCore/TuyaSmartBizCore.h>
+#import <TuyaSmartDeviceKit/TuyaSmartDeviceKit.h>
 
 @interface SceneListTableViewController ()
 @property (strong, nonatomic) TuyaSmartHome *home;
@@ -23,6 +25,8 @@
     [super viewDidLoad];
     if ([Home getCurrentHome]) {
         self.home = [TuyaSmartHome homeWithHomeId:[Home getCurrentHome].homeId];
+        [self updateHomeDetail];
+        [[TuyaSmartBizCore sharedInstance] registerService:@protocol(TYFamilyProtocol) withInstance:self];
         [[TuyaSmartBizCore sharedInstance] registerService:@protocol(TYSmartHomeDataProtocol) withInstance:self];
         [[TuyaSmartBizCore sharedInstance] registerService:@protocol(TYSmartHouseIndexProtocol) withInstance:self];
     }
@@ -35,7 +39,6 @@
     [self.navigationController.navigationItem setHidesBackButton:NO];
     [self.navigationItem setHidesBackButton:NO];
     [self.navigationController.navigationBar.backItem setHidesBackButton:NO];
-    [self loadSceneList];
 }
 
 - (void)loadSceneList {
@@ -48,12 +51,25 @@
     }];
 }
 
+- (BOOL)homeAdminValidation {
+    return YES;
+}
+
 - (TuyaSmartHome *)getCurrentHome {
     return self.home;
 }
 
-- (BOOL)homeAdminValidation {
-    return YES;
+- (long long)currentFamilyId {
+    return self.home.homeModel.homeId;
+}
+
+- (void)updateHomeDetail {
+    [self.home getHomeDetailWithSuccess:^(TuyaSmartHomeModel *homeModel) {
+        [self loadSceneList];
+        [self.tableView reloadData];
+    } failure:^(NSError *error) {
+        [Alert showBasicAlertOnVC:self withTitle:NSLocalizedString(@"Failed to Fetch Home", @"") message:error.localizedDescription];
+    }];
 }
 
 #pragma mark - Table view data source

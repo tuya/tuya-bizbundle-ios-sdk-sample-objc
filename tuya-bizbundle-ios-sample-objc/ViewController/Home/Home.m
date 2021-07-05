@@ -5,6 +5,8 @@
 //  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
 
 #import "Home.h"
+#import <TuyaSmartBizCore/TuyaSmartBizCore.h>
+#import <TYModuleServices/TYModuleServices.h>
 
 @implementation Home
 
@@ -23,6 +25,8 @@
 + (void)setCurrentHome:(TuyaSmartHomeModel *)homeModel {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:[NSString stringWithFormat:@"%lld", homeModel.homeId] forKey:@"CurrentHome"];
+    id<TYFamilyProtocol> familyProtocol = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYFamilyProtocol)];
+    [familyProtocol updateCurrentFamilyId:homeModel.homeId];
 }
 
 @end
