@@ -1,5 +1,5 @@
 source "https://github.com/TuyaInc/TuyaPublicSpecs.git"
-source 'https://cdn.cocoapods.org/'
+source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks!
 
@@ -21,5 +21,5 @@ target 'tuya-bizbundle-ios-sample-objc_Example' do
   pod 'TuyaSmartOTABizBundle'
   pod 'TuyaSmartPanelBizBundle'
   pod 'TuyaSmartSceneBizBundle'
-  pod 'TYRCTScenePanelManager'
+  pod 'TuyaSmartSkillQuickBindBizBundle'
 end

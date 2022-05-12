@@ -144,6 +144,9 @@
         case 8:
             [self requestMallPage];
             break;
+        case 10:
+            [self gotoAmazonAlexa];
+            break;
         default:
             break;
     }
@@ -230,6 +233,17 @@
     if ([segue.identifier isEqualToString:@"show-camera-photo-library-panel"] && [segue.destinationViewController isKindOfClass:[DeviceListTableViewController class]]) {
         ((DeviceListTableViewController*)(segue.destinationViewController)).deviceListType = DeviceListTypeCameraPhotoLibraryPanel;
     }
+}
+
+- (void)gotoAmazonAlexa {
+    id<TYValueAddedServiceProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYValueAddedServiceProtocol)];
+
+    // 跳转到 Alexa 快绑页面
+    [impl goToAmazonAlexaLinkViewControllerSuccess:^(BOOL result) {
+        // 可以做 loading 操作
+    } failure:^(NSError * _Nonnull error) {
+        // 可以做 loading 操作
+    }];
 }
 
 - (TuyaSmartHomeManager *)homeManager {
