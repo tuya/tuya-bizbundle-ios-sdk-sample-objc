@@ -64,7 +64,7 @@
 }
 
 - (void)updateHomeDetail {
-    [self.home getHomeDetailWithSuccess:^(TuyaSmartHomeModel *homeModel) {
+    [self.home getHomeDataWithSuccess:^(TuyaSmartHomeModel *homeModel) {
         [self loadSceneList];
         [self.tableView reloadData];
     } failure:^(NSError *error) {

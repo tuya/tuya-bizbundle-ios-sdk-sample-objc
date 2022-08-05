@@ -3,7 +3,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks!
 
-platform :ios, '10.0'
+platform :ios, '11.0'
+inhibit_all_warnings!
 
 target 'tuya-bizbundle-ios-sample-objc_Example' do
   pod 'SVProgressHUD'
@@ -22,4 +23,12 @@ target 'tuya-bizbundle-ios-sample-objc_Example' do
   pod 'TuyaSmartPanelBizBundle'
   pod 'TuyaSmartSceneBizBundle'
   pod 'TuyaSmartSkillQuickBindBizBundle'
+end
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      # 消除文档警告
+      config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS'] = 'NO'
+    end
+  end
 end
