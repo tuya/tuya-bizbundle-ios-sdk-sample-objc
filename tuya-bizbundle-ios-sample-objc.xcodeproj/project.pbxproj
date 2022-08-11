@@ -22,6 +22,7 @@
 		34D5CA1C25F0C14900C22B14 /* configList.json in Resources */ = {isa = PBXBuildFile; fileRef = 34D5CA1B25F0C14900C22B14 /* configList.json */; };
 		34D5CA3025F20CDE00C22B14 /* SceneListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D5CA2F25F20CDE00C22B14 /* SceneListTableViewController.m */; };
 		34EABCD425EF305200A72A8D /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EABCD325EF305200A72A8D /* MainTableViewController.m */; };
+		59935D6F28A4A9CE000A12CE /* deviceDetailConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 59935D6E28A4A9CE000A12CE /* deviceDetailConfig.json */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -85,6 +86,7 @@
 		34EABCD325EF305200A72A8D /* MainTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		368ED08045690B9BA6C1281B /* Pods-tuya-bizbundle-ios-sample-objc_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tuya-bizbundle-ios-sample-objc_Example.debug.xcconfig"; path = "Target Support Files/Pods-tuya-bizbundle-ios-sample-objc_Example/Pods-tuya-bizbundle-ios-sample-objc_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		587D822514EC3EA77C85A878 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		59935D6E28A4A9CE000A12CE /* deviceDetailConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = deviceDetailConfig.json; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* tuya-bizbundle-ios-sample-objc_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tuya-bizbundle-ios-sample-objc_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -230,6 +232,7 @@
 				AFA3294925D0E34F0065E54E /* AppKey.h */,
 				344EBA6725F64BA900C115E2 /* ty_custom_config.json */,
 				34D5CA1B25F0C14900C22B14 /* configList.json */,
+				59935D6E28A4A9CE000A12CE /* deviceDetailConfig.json */,
 				AFA3294F25D0E34F0065E54E /* StoryBoard */,
 				AFA3298025D0E3500065E54E /* ViewController */,
 				AFA329B625D0E3500065E54E /* Helper */,
@@ -401,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				59935D6F28A4A9CE000A12CE /* deviceDetailConfig.json in Resources */,
 				AFA329D425D0E3500065E54E /* Login.storyboard in Resources */,
 				34D5CA0625EF967500C22B14 /* DeviceList.storyboard in Resources */,
 				AFA329CD25D0E3500065E54E /* LaunchScreen.storyboard in Resources */,
@@ -456,9 +460,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-tuya-bizbundle-ios-sample-objc_Example/Pods-tuya-bizbundle-ios-sample-objc_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/DoubleConversion/DoubleConversion.framework",
 				"${BUILT_PRODUCTS_DIR}/EZAudio/EZAudio.framework",
@@ -475,8 +477,6 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/TPCircularBuffer/TPCircularBuffer.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
-				"${PODS_ROOT}/TuyaAudioEngineSDK/Carthage/Build/iOS/TuyaAudioEngineSDK.framework",
-				"${PODS_ROOT}/TuyaFFmpegWrapper/Carthage/Build/iOS/TuyaFFmpegWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/UICKeyChainStore/UICKeyChainStore.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/glog/glog.framework",
@@ -484,16 +484,19 @@
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TYMbedtls/TYMbedtls.framework/TYMbedtls",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TuyaAudioEngineSDK/TuyaAudioEngineSDK.framework/TuyaAudioEngineSDK",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TuyaAvLoggerSDK/TuyaAvLoggerSDK.framework/TuyaAvLoggerSDK",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TuyaCameraSDK/TuyaCameraSDK.framework/TuyaCameraSDK",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TuyaCloudStorageSignatureTools/TuyaCloudStorageSignatureTools.framework/TuyaCloudStorageSignatureTools",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TuyaFFmpegWrapper/TuyaFFmpegWrapper.framework/TuyaFFmpegWrapper",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TuyaP2PSDK/TuyaP2PSDK.framework/TuyaP2PSDK",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TuyaSmartQUIC/TuyaSmartQUIC.framework/TuyaSmartQUIC",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TuyaSmartUtil/TuyaSmartUtil.framework/TuyaSmartUtil",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TuyaVideoCodecSDK/TuyaVideoCodecSDK.framework/TuyaVideoCodecSDK",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DACircularProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoubleConversion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZAudio.framework",
@@ -510,8 +513,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPCircularBuffer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TuyaAudioEngineSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TuyaFFmpegWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICKeyChainStore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
@@ -519,10 +520,15 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TYMbedtls.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TuyaAudioEngineSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TuyaAvLoggerSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TuyaCameraSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TuyaCloudStorageSignatureTools.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TuyaFFmpegWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TuyaP2PSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TuyaSmartQUIC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TuyaSmartUtil.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TuyaVideoCodecSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -587,10 +593,11 @@
 				"${PODS_ROOT}/TYFeedBackModule/Build/TYFeedBackModule.xcframework/ios-arm64_armv7/TYFeedBackModule.framework/CustomResources/Assets/at_feedback_send_fail@3x.png",
 				"${PODS_ROOT}/TYFeedBackModule/Build/TYFeedBackModule.xcframework/ios-arm64_armv7/TYFeedBackModule.framework/CustomResources/Assets/ty_feedback_tyheadicon@2x.png",
 				"${PODS_ROOT}/TYFeedBackModule/Build/TYFeedBackModule.xcframework/ios-arm64_armv7/TYFeedBackModule.framework/CustomResources/Assets/ty_feedback_tyheadicon@3x.png",
-				"${PODS_ROOT}/TYHybridContainer/Build/TYHybridContainer.xcframework/ios-arm64_armv7/TYHybridContainer.framework/CustomResources/Bundles/TYHybridContainer.bundle",
-				"${PODS_ROOT}/TYMediaKit/Build/TYMediaKit.xcframework/ios-arm64_armv7/TYMediaKit.framework/CustomResources/Bundles/TYMediaKit.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/TYHybridContainer/TYHybridContainer.bundle",
+				"${PODS_ROOT}/TYImagePickerController/Build/TYImagePickerController.xcframework/ios-arm64_armv7/TYImagePickerController.framework/CustomResources/Assets/TYImagePickerController.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/TYMediaKit/TYMediaKit.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TYMessageCenterModule/TYMessageCenterModule.bundle",
-				"${PODS_ROOT}/TYNavigationController/Build/TYNavigationController.xcframework/ios-arm64_armv7/TYNavigationController.framework/CustomResources/Assets/TYNavigationRes.bundle",
+				"${PODS_ROOT}/TYNavigationController/TYNavigationController/Assets/TYNavigationRes.bundle",
 				"${PODS_ROOT}/TYNetPoolModule/Build/TYNetPoolModule.xcframework/ios-arm64_armv7/TYNetPoolModule.framework/CustomResources/Bundles/TYNetPoolModule.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TYOTADefaultUI/TYOTADefaultUI.bundle",
 				"${PODS_ROOT}/TYPanelBundleManager/Build/TYPanelBundleManager.xcframework/ios-arm64_armv7/TYPanelBundleManager.framework/CustomResources/Assets/ty_panel_download_loading@2x.png",
@@ -621,7 +628,7 @@
 				"${PODS_ROOT}/TYPanelModule/TYPanelModule/Assets/Panel/ty_firmware_loading@2x.png",
 				"${PODS_ROOT}/TYPanelModule/TYPanelModule/Assets/Panel/ty_firmware_loading@3x.png",
 				"${PODS_ROOT}/TYPanelSweeperUtil/Build/TYPanelSweeperUtil.xcframework/ios-arm64_armv7/TYPanelSweeperUtil.framework/CustomResources/Bundles/TYPanelSweeperUtil.bundle",
-				"${PODS_ROOT}/TYPhotoLibraryModule/Build/TYPhotoLibraryModule.xcframework/ios-arm64_armv7/TYPhotoLibraryModule.framework/CustomResources/Bundles/TYPhotoLibraryModule.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/TYPhotoLibraryModule/TYPhotoLibraryModule.bundle",
 				"${PODS_ROOT}/TYQRCodeModule/Build/TYQRCodeModule.xcframework/ios-arm64_armv7/TYQRCodeModule.framework/CustomResources/Assets/QRCode.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TYRCTLaserMap/TYRCTLaserMap.bundle",
 				"${PODS_ROOT}/TYRealClass/Build/TYRealClass.xcframework/ios-arm64_armv7/TYRealClass.framework/CustomResources/Bundles/TYOBC.bundle",
@@ -644,6 +651,7 @@
 				"${PODS_CONFIGURATION_BUILD_DIR}/TYSmartSceneDefaultUISkin/TYSmartSceneDefaultUISkin.bundle",
 				"${PODS_ROOT}/TYSmartSceneModule/TYSmartSceneModule/Assets/TYSmartSceneModule.bundle",
 				"${PODS_ROOT}/TYSmartUserCenterDefaultUISkin/Build/TYSmartUserCenterDefaultUISkin.xcframework/ios-arm64_armv7/TYSmartUserCenterDefaultUISkin.framework/CustomResources/Assets/TYSmartUserCenterDefaultUISkin.bundle",
+				"${PODS_ROOT}/TYSocialModule/Build/TYSocialModule.xcframework/ios-arm64_armv7/TYSocialModule.framework/CustomResources/Bundles/TYSocialModule.bundle",
 				"${PODS_ROOT}/TYTimerModule/Build/TYTimerModule.xcframework/ios-arm64_armv7/TYTimerModule.framework/CustomResources/Assets/ty_timer_invalid_icon@2x.png",
 				"${PODS_ROOT}/TYTimerModule/Build/TYTimerModule.xcframework/ios-arm64_armv7/TYTimerModule.framework/CustomResources/Assets/ty_timer_invalid_icon@3x.png",
 				"${PODS_ROOT}/TYTimerModule/Build/TYTimerModule.xcframework/ios-arm64_armv7/TYTimerModule.framework/CustomResources/Assets/ty_timer_list_empty_icon@2x.png",
@@ -729,6 +737,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ty_feedback_tyheadicon@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ty_feedback_tyheadicon@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYHybridContainer.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYImagePickerController.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYMediaKit.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYMessageCenterModule.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYNavigationRes.bundle",
@@ -785,6 +794,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYSmartSceneDefaultUISkin.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYSmartSceneModule.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYSmartUserCenterDefaultUISkin.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYSocialModule.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ty_timer_invalid_icon@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ty_timer_invalid_icon@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ty_timer_list_empty_icon@2x.png",
