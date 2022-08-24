@@ -1,3 +1,4 @@
+source 'https://github.com/tuya/tuya-pod-specs.git'
 source "https://github.com/TuyaInc/TuyaPublicSpecs.git"
 source 'https://github.com/CocoaPods/Specs.git'
 
