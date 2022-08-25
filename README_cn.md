@@ -50,4 +50,4 @@ pod install
 
 ## 收费标准
 
-SDK 是涂鸦 IoT App 解决方案的一种，以 App 云端连接服务为主，涉及收费标准详见[产品定价](https://developer.tuya.com/cn/docs/app-development/app-sdk-price?id=Kbu0tcr2cbx3o)
+Tuya Self-Developed App 服务 是涂鸦 IoT App 解决方案的一种，以 App 云端连接服务为主，包含 iOS UI业务包， 涉及收费标准详见[产品定价](https://developer.tuya.com/cn/docs/app-development/app-sdk-price?id=Kbu0tcr2cbx3o)
