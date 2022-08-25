@@ -46,3 +46,8 @@ pod install
 7. 下载安全图片并将其重命名为 `t_s.bmp`, 然后将其拖到工作区中，使其与`Info.plist`同级。
 
 **Note:** bundle ID、AppKey、AppSecret和安全图片必须与您在涂鸦物联网平台上的应用相同，否则示例无法成功请求API。
+
+
+## 收费标准
+
+SDK 是涂鸦 IoT App 解决方案的一种，以 App 云端连接服务为主，涉及收费标准详见[产品定价](https://developer.tuya.com/cn/docs/app-development/app-sdk-price?id=Kbu0tcr2cbx3o)
