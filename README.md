@@ -48,7 +48,7 @@ pod install
 **Note:** The bundle ID, AppKey, AppSecret, and security image must be the same as your App in Tuya IoT Platform; otherwise, the sample cannot successfully request the API.
 
 ## Self-developed Smart Life App Service
-Self-Developed Smart Life App is one of Tuya’s IoT app development solutions. This solution provides the services that enable connections between the app and the cloud. It also supports a full range of services and capabilities that customers can use to independently develop mobile apps. The Smart Life App SDK used in this sample is included in the Self-developed Smart Life App Service.
+Self-Developed Smart Life App is one of Tuya’s IoT app development solutions. This solution provides the services that enable connections between the app and the cloud. It also supports a full range of services and capabilities that customers can use to independently develop mobile apps. The iOS Biz Bundle used in this sample is included in the Self-developed Smart Life App Service.
 
 Self-Developed Smart Life App is classified into the **Trial** and **Official** editions:
 
