@@ -59,7 +59,7 @@
 /* Class = "UITableViewSection"; headerTitle = "TuyaSmartSceneBizBundle"; ObjectID = "dj0-eZ-2oU"; */
 "dj0-eZ-2oU.headerTitle" = "场景 UI 业务包";
 
-/* Class = "UILabel"; text = "Edit scenne"; ObjectID = "exn-8d-hBg"; */
+/* Class = "UILabel"; text = "Edit scene"; ObjectID = "exn-8d-hBg"; */
 "exn-8d-hBg.text" = "编辑场景";
 
 /* Class = "UITableViewSection"; headerTitle = "TuyaSmartActivatorBizBundle"; ObjectID = "gln-7n-wXC"; */
@@ -85,3 +85,12 @@
 
 /* Class = "UILabel"; text = "Mall"; ObjectID = "wLq-m8-X54"; */
 "wLq-m8-X54.text" = "商城";
+
+/* Class = "UITableViewSection"; headerTitle = "TuyaSmartLightSceneBizBundle"; ObjectID = "1dd-AH-nlg"; */
+"1dd-AH-nlg.headerTitle" = "灯光场景 UI 业务包";
+
+/* Class = "UILabel"; text = "New light scene"; ObjectID = "VHC-vQ-qgM"; */
+"VHC-vQ-qgM.text" = "新建灯光场景";
+
+/* Class = "UILabel"; text = "Edit light scene"; ObjectID = "FbB-IV-vmr"; */
+"FbB-IV-vmr.text" = "编辑灯光场景";

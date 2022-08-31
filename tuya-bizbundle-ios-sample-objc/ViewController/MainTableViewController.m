@@ -147,6 +147,15 @@
         case 10:
             [self gotoAmazonAlexa];
             break;
+        case 11:
+            switch (indexPath.row) {
+                case 0:
+                    [self gotoAddLightScene];
+                    break;
+                default:
+                    break;
+            }
+            break;
         default:
             break;
     }
@@ -201,6 +210,22 @@
     }];
 }
 
+- (void)gotoAmazonAlexa {
+    id<TYValueAddedServiceProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYValueAddedServiceProtocol)];
+
+    // 跳转到 Alexa 快绑页面
+    [impl goToAmazonAlexaLinkViewControllerSuccess:^(BOOL result) {
+        // 可以做 loading 操作
+    } failure:^(NSError * _Nonnull error) {
+        // 可以做 loading 操作
+    }];
+}
+
+- (void)gotoAddLightScene {
+    id<TYLightSceneProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYLightSceneProtocol)];
+    [impl createNewLightScene];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"show-device-list-detail"] && [segue.destinationViewController isKindOfClass:[DeviceListTableViewController class]]) {
         ((DeviceListTableViewController*)(segue.destinationViewController)).deviceListType = DeviceListTypeDeviceDetail;
@@ -233,17 +258,6 @@
     if ([segue.identifier isEqualToString:@"show-camera-photo-library-panel"] && [segue.destinationViewController isKindOfClass:[DeviceListTableViewController class]]) {
         ((DeviceListTableViewController*)(segue.destinationViewController)).deviceListType = DeviceListTypeCameraPhotoLibraryPanel;
     }
-}
-
-- (void)gotoAmazonAlexa {
-    id<TYValueAddedServiceProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYValueAddedServiceProtocol)];
-
-    // 跳转到 Alexa 快绑页面
-    [impl goToAmazonAlexaLinkViewControllerSuccess:^(BOOL result) {
-        // 可以做 loading 操作
-    } failure:^(NSError * _Nonnull error) {
-        // 可以做 loading 操作
-    }];
 }
 
 - (TuyaSmartHomeManager *)homeManager {
