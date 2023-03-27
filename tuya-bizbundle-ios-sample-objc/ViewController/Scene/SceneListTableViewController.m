@@ -9,13 +9,13 @@
 #import "SceneListTableViewController.h"
 #import "Home.h"
 #import "Alert.h"
-#import <TuyaSmartBizCore/TuyaSmartBizCore.h>
-#import <TYModuleServices/TYModuleServices.h>
-#import <TuyaSmartBizCore/TuyaSmartBizCore.h>
-#import <TuyaSmartDeviceKit/TuyaSmartDeviceKit.h>
+#import <ThingSmartBizCore/ThingSmartBizCore.h>
+#import <ThingModuleServices/ThingModuleServices.h>
+#import <ThingSmartBizCore/ThingSmartBizCore.h>
+#import <ThingSmartDeviceKit/ThingSmartDeviceKit.h>
 
 @interface SceneListTableViewController ()
-@property (strong, nonatomic) TuyaSmartHome *home;
+@property (strong, nonatomic) ThingSmartHome *home;
 @property (strong, nonatomic) NSArray *sceneList;
 @end
 
@@ -24,11 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if ([Home getCurrentHome]) {
-        self.home = [TuyaSmartHome homeWithHomeId:[Home getCurrentHome].homeId];
+        self.home = [ThingSmartHome homeWithHomeId:[Home getCurrentHome].homeId];
         [self updateHomeDetail];
-        [[TuyaSmartBizCore sharedInstance] registerService:@protocol(TYFamilyProtocol) withInstance:self];
-        [[TuyaSmartBizCore sharedInstance] registerService:@protocol(TYSmartHomeDataProtocol) withInstance:self];
-        [[TuyaSmartBizCore sharedInstance] registerService:@protocol(TYSmartHouseIndexProtocol) withInstance:self];
+        [[ThingSmartBizCore sharedInstance] registerService:@protocol(ThingFamilyProtocol) withInstance:self];
+        [[ThingSmartBizCore sharedInstance] registerService:@protocol(ThingSmartHomeDataProtocol) withInstance:self];
+        [[ThingSmartBizCore sharedInstance] registerService:@protocol(ThingSmartHouseIndexProtocol) withInstance:self];
     }
 }
 
@@ -42,8 +42,8 @@
 }
 
 - (void)loadSceneList {
-    id<TYSmartSceneBizProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYSmartSceneBizProtocol)];
-    [impl getSceneListWithHomeId:[Home getCurrentHome].homeId withSuccess:^(NSArray<TuyaSmartSceneModel *> * _Nonnull scenes) {
+    id<ThingSmartSceneBizProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingSmartSceneBizProtocol)];
+    [impl getSceneListWithHomeId:[Home getCurrentHome].homeId withSuccess:^(NSArray<ThingSmartSceneModel *> * _Nonnull scenes) {
         self.sceneList = scenes;
         [self.tableView reloadData];
     } failure:^(NSError * _Nonnull error) {
@@ -55,7 +55,7 @@
     return YES;
 }
 
-- (TuyaSmartHome *)getCurrentHome {
+- (ThingSmartHome *)getCurrentHome {
     return self.home;
 }
 
@@ -64,7 +64,7 @@
 }
 
 - (void)updateHomeDetail {
-    [self.home getHomeDataWithSuccess:^(TuyaSmartHomeModel *homeModel) {
+    [self.home getHomeDataWithSuccess:^(ThingSmartHomeModel *homeModel) {
         [self loadSceneList];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
@@ -87,14 +87,14 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"scene-list-cell"];
     }
-    cell.textLabel.text = ((TuyaSmartSceneModel *)self.sceneList[indexPath.row]).name;
+    cell.textLabel.text = ((ThingSmartSceneModel *)self.sceneList[indexPath.row]).name;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    id<TYSmartSceneProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYSmartSceneProtocol)];
+    id<ThingSmartSceneProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingSmartSceneProtocol)];
     [impl editScene:self.sceneList[indexPath.row]];
 }
 

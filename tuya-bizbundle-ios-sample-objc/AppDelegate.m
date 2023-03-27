@@ -17,11 +17,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Initialize TuyaSmartSDK
-    [[TuyaSmartSDK sharedInstance] startWithAppKey:APP_KEY secretKey:APP_SECRET_KEY];
+    [[ThingSmartSDK sharedInstance] startWithAppKey:APP_KEY secretKey:APP_SECRET_KEY];
     
     // Enable debug mode, which allows you to see logs.
     #ifdef DEBUG
-    [[TuyaSmartSDK sharedInstance] setDebugMode:YES];
+    [[ThingSmartSDK sharedInstance] setDebugMode:YES];
     #else
     #endif
     
@@ -30,7 +30,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.frame = [[UIScreen mainScreen] bounds];
     
-    if ([TuyaSmartUser sharedInstance].isLogin) {
+    if ([ThingSmartUser sharedInstance].isLogin) {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"TuyaSmartMain" bundle:nil];
         UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
         self.window.rootViewController = nav;

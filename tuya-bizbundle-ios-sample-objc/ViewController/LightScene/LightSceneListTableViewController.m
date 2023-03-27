@@ -9,13 +9,13 @@
 #import "LightSceneListTableViewController.h"
 #import "Home.h"
 #import "Alert.h"
-#import <TYModuleServices/TYModuleServices.h>
-#import <TuyaSmartBizCore/TuyaSmartBizCore.h>
-#import <TuyaSmartDeviceKit/TuyaSmartDeviceKit.h>
-#import <TuyaLightSceneKit/TuyaLightSceneModel.h>
+#import <ThingModuleServices/ThingModuleServices.h>
+#import <ThingSmartBizCore/ThingSmartBizCore.h>
+#import <ThingSmartDeviceKit/ThingSmartDeviceKit.h>
+//#import <ThingLightSceneKit/ThingLightSceneModel.h>
 
 @interface LightSceneListTableViewController ()
-@property (strong, nonatomic) TuyaSmartHome *home;
+@property (strong, nonatomic) ThingSmartHome *home;
 @property (strong, nonatomic) NSArray *lightSceneList;
 @end
 
@@ -24,11 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if ([Home getCurrentHome]) {
-        self.home = [TuyaSmartHome homeWithHomeId:[Home getCurrentHome].homeId];
+        self.home = [ThingSmartHome homeWithHomeId:[Home getCurrentHome].homeId];
         [self updateHomeDetail];
-        [[TuyaSmartBizCore sharedInstance] registerService:@protocol(TYFamilyProtocol) withInstance:self];
-        [[TuyaSmartBizCore sharedInstance] registerService:@protocol(TYSmartHomeDataProtocol) withInstance:self];
-        [[TuyaSmartBizCore sharedInstance] registerService:@protocol(TYSmartHouseIndexProtocol) withInstance:self];
+        [[ThingSmartBizCore sharedInstance] registerService:@protocol(ThingFamilyProtocol) withInstance:self];
+        [[ThingSmartBizCore sharedInstance] registerService:@protocol(ThingSmartHomeDataProtocol) withInstance:self];
+        [[ThingSmartBizCore sharedInstance] registerService:@protocol(ThingSmartHouseIndexProtocol) withInstance:self];
         
         // 监听到灯光场景变化，通知刷新列表
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadLightSceneList) name:@"kNotificationLightSceneListUpdate" object:nil];
@@ -45,8 +45,8 @@
 }
 
 - (void)loadLightSceneList {
-    id<TYLightSceneBizProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYLightSceneBizProtocol)];
-    [impl getLightSceneListWithSuccess:^(NSArray<TuyaLightSceneModel *> * _Nonnull scenes) {
+    id<ThingLightSceneBizProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingLightSceneBizProtocol)];
+    [impl getLightSceneListWithSuccess:^(NSArray<ThingLightSceneModel *> * _Nonnull scenes) {
         self.lightSceneList = scenes;
         [self.tableView reloadData];
     } failure:^(NSError * _Nonnull error) {
@@ -58,7 +58,7 @@
     return YES;
 }
 
-- (TuyaSmartHome *)getCurrentHome {
+- (ThingSmartHome *)getCurrentHome {
     return self.home;
 }
 
@@ -67,7 +67,7 @@
 }
 
 - (void)updateHomeDetail {
-    [self.home getHomeDataWithSuccess:^(TuyaSmartHomeModel *homeModel) {
+    [self.home getHomeDataWithSuccess:^(ThingSmartHomeModel *homeModel) {
         [self loadLightSceneList];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
@@ -90,17 +90,17 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"light-scene-list-cell"];
     }
-    cell.textLabel.text = ((TuyaLightSceneModel *)self.lightSceneList[indexPath.row]).name;
+    //cell.textLabel.text = ((ThingLightSceneModel *)self.lightSceneList[indexPath.row]).name;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    TuyaLightSceneModel *scene = self.lightSceneList[indexPath.row];
+    ThingLightSceneModel *scene = self.lightSceneList[indexPath.row];
     UIAlertController *alertC = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Choose an Action", @"") message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *executeAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Execute the Lighting Scenario", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        id<TYLightSceneBizProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYLightSceneBizProtocol)];
+        id<ThingLightSceneBizProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingLightSceneBizProtocol)];
         [impl executeLightScene:scene success:^(BOOL success) {
             [Alert showBasicAlertOnVC:[UIApplication sharedApplication].keyWindow.rootViewController withTitle:NSLocalizedString(@"Successfully Executed", @"") message:@""];
         } failure:^(NSError * _Nonnull error) {
@@ -108,7 +108,7 @@
         }];
     }];
     UIAlertAction *detailAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Edit the Lighting Scenario", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        id<TYLightSceneProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYLightSceneProtocol)];
+        id<ThingLightSceneProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingLightSceneProtocol)];
         [impl editLightScene:self.lightSceneList[indexPath.row]];
     }];
     [alertC addAction:executeAction];

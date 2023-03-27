@@ -7,12 +7,12 @@
 #import "DeviceListTableViewController.h"
 #import "Home.h"
 #import "Alert.h"
-#import <TuyaSmartBizCore/TuyaSmartBizCore.h>
-#import <TYModuleServices/TYModuleServices.h>
-#import <TuyaSmartCameraKit/TuyaSmartCameraKit.h>
+#import <ThingSmartBizCore/ThingSmartBizCore.h>
+#import <ThingModuleServices/ThingModuleServices.h>
+//#import <ThingSmartCameraKit/ThingSmartCameraKit.h>
 
-@interface DeviceListTableViewController () <TuyaSmartHomeDelegate>
-@property (strong, nonatomic) TuyaSmartHome *home;
+@interface DeviceListTableViewController () <ThingSmartHomeDelegate>
+@property (strong, nonatomic) ThingSmartHome *home;
 @end
 
 @implementation DeviceListTableViewController
@@ -20,11 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if ([Home getCurrentHome]) {
-        self.home = [TuyaSmartHome homeWithHomeId:[Home getCurrentHome].homeId];
+        self.home = [ThingSmartHome homeWithHomeId:[Home getCurrentHome].homeId];
         self.home.delegate = self;
         [self updateHomeDetail];
-        [[TuyaSmartBizCore sharedInstance] registerService:@protocol(TYSmartHomeDataProtocol) withInstance:self];
-        [[TuyaSmartBizCore sharedInstance] registerService:@protocol(TYRNCameraProtocol) withInstance:self];
+        [[ThingSmartBizCore sharedInstance] registerService:@protocol(ThingSmartHomeDataProtocol) withInstance:self];
+        [[ThingSmartBizCore sharedInstance] registerService:@protocol(ThingRNCameraProtocol) withInstance:self];
     }
 }
 
@@ -41,14 +41,14 @@
 }
 
 - (void)updateHomeDetail {
-    [self.home getHomeDataWithSuccess:^(TuyaSmartHomeModel *homeModel) {
+    [self.home getHomeDataWithSuccess:^(ThingSmartHomeModel *homeModel) {
         [self.tableView reloadData];
     } failure:^(NSError *error) {
         [Alert showBasicAlertOnVC:self withTitle:NSLocalizedString(@"Failed to Fetch Home", @"") message:error.localizedDescription];
     }];
 }
 
-- (TuyaSmartHome *)getCurrentHome {
+- (ThingSmartHome *)getCurrentHome {
     return self.home;
 }
 
@@ -64,7 +64,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"device-list-cell" forIndexPath:indexPath];
-    TuyaSmartDeviceModel *deviceModel = self.home.deviceList[indexPath.row];
+    ThingSmartDeviceModel *deviceModel = self.home.deviceList[indexPath.row];
     cell.textLabel.text = deviceModel.name;
     cell.detailTextLabel.text = deviceModel.isOnline ? NSLocalizedString(@"Online", @"") : NSLocalizedString(@"Offline", @"");
     return cell;
@@ -72,7 +72,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    TuyaSmartDeviceModel *deviceModel = self.home.deviceList[indexPath.row];
+    ThingSmartDeviceModel *deviceModel = self.home.deviceList[indexPath.row];
     if (self.deviceListType == DeviceListTypeDeviceDetail) {
         [self gotoDeviceDetailDetailViewControllerWithDevice:deviceModel];
     } else if (self.deviceListType == DeviceListTypeDevicePanel) {
@@ -92,77 +92,77 @@
     }
 }
 
-- (void)gotoDeviceDetailDetailViewControllerWithDevice:(TuyaSmartDeviceModel *)deviceModel {
-    id<TYDeviceDetailProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYDeviceDetailProtocol)];
+- (void)gotoDeviceDetailDetailViewControllerWithDevice:(ThingSmartDeviceModel *)deviceModel {
+    id<ThingDeviceDetailProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingDeviceDetailProtocol)];
     [impl gotoDeviceDetailDetailViewControllerWithDevice:deviceModel group:nil];
 }
 
-- (void)getPanelViewControllerWithDeviceModel:(TuyaSmartDeviceModel *)deviceModel {
-    id<TYPanelProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYPanelProtocol)];
+- (void)getPanelViewControllerWithDeviceModel:(ThingSmartDeviceModel *)deviceModel {
+    id<ThingPanelProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingPanelProtocol)];
     [impl getPanelViewControllerWithDeviceModel:deviceModel initialProps:nil contextProps:nil completionHandler:^(__kindof UIViewController * _Nullable panelViewController, NSError * _Nullable error) {
         [self.navigationController pushViewController:panelViewController animated:YES];
     }];
 }
 
-- (void)checkFirmwareUpgrade:(TuyaSmartDeviceModel *)deviceModel {
-    id<TYOTAGeneralProtocol> otaImp = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYOTAGeneralProtocol)];
+- (void)checkFirmwareUpgrade:(ThingSmartDeviceModel *)deviceModel {
+    id<ThingOTAGeneralProtocol> otaImp = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingOTAGeneralProtocol)];
         
     if ([otaImp isSupportUpgrade:deviceModel]) {
-        [otaImp checkFirmwareUpgrade:deviceModel isManual:YES theme:TYOTAControllerWhiteTheme];
+        [otaImp checkFirmwareUpgrade:deviceModel isManual:YES theme:ThingOTAControllerWhiteTheme];
     } else {
         [Alert showBasicAlertOnVC:self withTitle:@"" message:NSLocalizedString(@"Already the latest version", nil)];
     }
 }
 
-- (void)cameraRNPanelViewControllerWithDeviceId:(TuyaSmartDeviceModel *)deviceModel {
-    if (!deviceModel.isIPCDevice) {
-        [self showIsNotIpcAlert];
-        return;
-    }
+- (void)cameraRNPanelViewControllerWithDeviceId:(ThingSmartDeviceModel *)deviceModel {
+//    if (!deviceModel.isIPCDevice) {
+//        [self showIsNotIpcAlert];
+//        return;
+//    }
     
-    id<TYPanelProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYPanelProtocol)];
+    id<ThingPanelProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingPanelProtocol)];
     [impl getPanelViewControllerWithDeviceModel:deviceModel initialProps:nil contextProps:nil completionHandler:^(__kindof UIViewController * _Nullable panelViewController, NSError * _Nullable error) {
         [self.navigationController pushViewController:panelViewController animated:YES];
     }];
 }
 
-- (void)deviceGotoCameraNewPlayBackPanel:(TuyaSmartDeviceModel *)deviceModel {
-    if (!deviceModel.isIPCDevice) {
-        [self showIsNotIpcAlert];
-        return;
-    }
+- (void)deviceGotoCameraNewPlayBackPanel:(ThingSmartDeviceModel *)deviceModel {
+//    if (!deviceModel.isIPCDevice) {
+//        [self showIsNotIpcAlert];
+//        return;
+//    }
     
-    id<TYCameraProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYCameraProtocol)];
+    id<ThingCameraProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingCameraProtocol)];
     [impl deviceGotoCameraNewPlayBackPanel:deviceModel];
 }
 
-- (void)deviceGotoCameraCloudStoragePanel:(TuyaSmartDeviceModel *)deviceModel {
-    if (!deviceModel.isIPCDevice) {
-        [self showIsNotIpcAlert];
-        return;
-    }
+- (void)deviceGotoCameraCloudStoragePanel:(ThingSmartDeviceModel *)deviceModel {
+//    if (!deviceModel.isIPCDevice) {
+//        [self showIsNotIpcAlert];
+//        return;
+//    }
     
-    id<TYCameraProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYCameraProtocol)];
+    id<ThingCameraProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingCameraProtocol)];
     [impl deviceGotoCameraCloudStoragePanel:deviceModel];
 }
 
-- (void)deviceGotoCameraMessageCenterPanel:(TuyaSmartDeviceModel *)deviceModel {
-    if (!deviceModel.isIPCDevice) {
-        [self showIsNotIpcAlert];
-        return;
-    }
+- (void)deviceGotoCameraMessageCenterPanel:(ThingSmartDeviceModel *)deviceModel {
+//    if (!deviceModel.isIPCDevice) {
+//        [self showIsNotIpcAlert];
+//        return;
+//    }
     
-    id<TYCameraProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYCameraProtocol)];
+    id<ThingCameraProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingCameraProtocol)];
     [impl deviceGotoCameraMessageCenterPanel:deviceModel];
 }
 
-- (void)deviceGotoPhotoLibrary:(TuyaSmartDeviceModel *)deviceModel {
-    if (!deviceModel.isIPCDevice) {
-        [self showIsNotIpcAlert];
-        return;
-    }
+- (void)deviceGotoPhotoLibrary:(ThingSmartDeviceModel *)deviceModel {
+//    if (!deviceModel.isIPCDevice) {
+//        [self showIsNotIpcAlert];
+//        return;
+//    }
     
-    id<TYCameraProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYCameraProtocol)];
+    id<ThingCameraProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingCameraProtocol)];
     [impl deviceGotoPhotoLibrary:deviceModel];
 }
 
@@ -170,23 +170,23 @@
     [Alert showBasicAlertOnVC:self withTitle:@"" message:NSLocalizedString(@"This is not a IPC device", @"")];
 }
 
-- (void)homeDidUpdateInfo:(TuyaSmartHome *)home {
+- (void)homeDidUpdateInfo:(ThingSmartHome *)home {
     [self.tableView reloadData];
 }
 
--(void)home:(TuyaSmartHome *)home didAddDeivice:(TuyaSmartDeviceModel *)device {
+-(void)home:(ThingSmartHome *)home didAddDeivice:(ThingSmartDeviceModel *)device {
     [self.tableView reloadData];
 }
 
--(void)home:(TuyaSmartHome *)home didRemoveDeivice:(NSString *)devId {
+-(void)home:(ThingSmartHome *)home didRemoveDeivice:(NSString *)devId {
     [self.tableView reloadData];
 }
 
--(void)home:(TuyaSmartHome *)home deviceInfoUpdate:(TuyaSmartDeviceModel *)device {
+-(void)home:(ThingSmartHome *)home deviceInfoUpdate:(ThingSmartDeviceModel *)device {
     [self.tableView reloadData];
 }
 
--(void)home:(TuyaSmartHome *)home device:(TuyaSmartDeviceModel *)device dpsUpdate:(NSDictionary *)dps {
+-(void)home:(ThingSmartHome *)home device:(ThingSmartDeviceModel *)device dpsUpdate:(NSDictionary *)dps {
     [self.tableView reloadData];
 }
 @end

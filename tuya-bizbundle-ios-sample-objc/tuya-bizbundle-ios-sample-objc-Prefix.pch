@@ -18,6 +18,6 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#import <TuyaSmartHomeKit/TuyaSmartKit.h>
+#import <ThingSmartHomeKit/ThingSmartKit.h>
 
 #endif /* PrefixHeader_pch */

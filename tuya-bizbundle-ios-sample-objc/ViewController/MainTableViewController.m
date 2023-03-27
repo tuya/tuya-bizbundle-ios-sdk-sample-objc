@@ -9,16 +9,16 @@
 #import "MainTableViewController.h"
 #import "Alert.h"
 #import "Home.h"
-#import <TYModuleServices/TYModuleServices.h>
-#import <TuyaSmartBizCore/TuyaSmartBizCore.h>
+#import <ThingModuleServices/ThingModuleServices.h>
+#import <ThingSmartBizCore/ThingSmartBizCore.h>
 #import "DeviceListTableViewController.h"
 
-@interface MainTableViewController () <TuyaSmartHomeManagerDelegate>
+@interface MainTableViewController () <ThingSmartHomeManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (weak, nonatomic) IBOutlet UILabel *currentHomeLabel;
 
-@property (strong, nonatomic) TuyaSmartHomeManager *homeManager;
+@property (strong, nonatomic) ThingSmartHomeManager *homeManager;
 
 @end
 
@@ -27,8 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initiateCurrentHome];
-    [[TuyaSmartBizCore sharedInstance] registerService:@protocol(TYSmartHomeDataProtocol) withInstance:self];
-    [[TuyaSmartBizCore sharedInstance] registerService:@protocol(TYSmartHouseIndexProtocol) withInstance:self];
+    [[ThingSmartBizCore sharedInstance] registerService:@protocol(ThingSmartHomeDataProtocol) withInstance:self];
+    [[ThingSmartBizCore sharedInstance] registerService:@protocol(ThingSmartHouseIndexProtocol) withInstance:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -39,7 +39,7 @@
 
 - (void)initiateCurrentHome {
     self.homeManager.delegate = self;
-    [self.homeManager getHomeListWithSuccess:^(NSArray<TuyaSmartHomeModel *> *homes) {
+    [self.homeManager getHomeListWithSuccess:^(NSArray<ThingSmartHomeModel *> *homes) {
         if (homes && homes.count > 0) {
             [Home setCurrentHome:homes.firstObject];
         }
@@ -48,12 +48,12 @@
     }];
 }
 
-- (TuyaSmartHome *)getCurrentHome {
+- (ThingSmartHome *)getCurrentHome {
     if (![Home getCurrentHome]) {
         return  nil;
     }
     
-    TuyaSmartHome *home = [TuyaSmartHome homeWithHomeId:[Home getCurrentHome].homeId];
+    ThingSmartHome *home = [ThingSmartHome homeWithHomeId:[Home getCurrentHome].homeId];
     return home;
 }
 
@@ -61,17 +61,17 @@
     return YES;
 }
 
-- (void)homeManager:(TuyaSmartHomeManager *)manager didAddHome:(TuyaSmartHomeModel *)homeModel {
-    if (homeModel.dealStatus <= TYHomeStatusPending && homeModel.name.length > 0) {
+- (void)homeManager:(ThingSmartHomeManager *)manager didAddHome:(ThingSmartHomeModel *)homeModel {
+    if (homeModel.dealStatus <= ThingHomeStatusPending && homeModel.name.length > 0) {
         UIAlertController *alertController;
         alertController = [UIAlertController alertControllerWithTitle:@"" message:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Invite you to join the family", @""), homeModel.name] preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"Join" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            TuyaSmartHome *home = [TuyaSmartHome homeWithHomeId:homeModel.homeId];
+            ThingSmartHome *home = [ThingSmartHome homeWithHomeId:homeModel.homeId];
             [home joinFamilyWithAccept:YES success:^(BOOL result) {} failure:^(NSError *error) {}];
         }];
         
         UIAlertAction *refuseAction = [UIAlertAction actionWithTitle:@"Refuse" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            TuyaSmartHome *home = [TuyaSmartHome homeWithHomeId:homeModel.homeId];
+            ThingSmartHome *home = [ThingSmartHome homeWithHomeId:homeModel.homeId];
             [home joinFamilyWithAccept:NO success:^(BOOL result) {} failure:^(NSError *error) {}];
         }];
         [alertController addAction:action];
@@ -88,7 +88,7 @@
 - (IBAction)logoutTapped:(UIButton *)sender {
     UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(@"You're going to log out this account.", @"User tapped the logout button.") preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *logoutAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Logout", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-        [[TuyaSmartUser sharedInstance] loginOut:^{
+        [[ThingSmartUser sharedInstance] loginOut:^{
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UINavigationController *nav = [mainStoryboard instantiateInitialViewController];
             [UIApplication sharedApplication].keyWindow.rootViewController = nav;
@@ -162,45 +162,45 @@
 }
 
 - (void)gotoFamilyManagement {
-    id<TYFamilyProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYFamilyProtocol)];
+    id<ThingFamilyProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingFamilyProtocol)];
     [impl gotoFamilyManagement];
 }
 
 - (void)gotoCategoryViewController {
-    id<TYActivatorProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYActivatorProtocol)];
+    id<ThingActivatorProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingActivatorProtocol)];
     [impl gotoCategoryViewController];
   
-    [impl activatorCompletion:TYActivatorCompletionNodeNormal customJump:NO completionBlock:^(NSArray * _Nullable deviceList) {
+    [impl activatorCompletion:ThingActivatorCompletionNodeNormal customJump:NO completionBlock:^(NSArray * _Nullable deviceList) {
         NSLog(@"deviceList: %@",deviceList);
     }];
 }
 
 - (void)gotoAddScene {
-    id<TYSmartSceneProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYSmartSceneProtocol)];
-    [impl addAutoScene:^(TuyaSmartSceneModel *secneModel, BOOL addSuccess) {
+    id<ThingSmartSceneProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingSmartSceneProtocol)];
+    [impl addAutoScene:^(ThingSmartSceneModel *secneModel, BOOL addSuccess) {
             
     }];
 }
 
 - (void)gotoMessageCenterViewControllerWithAnimated {
-    id<TYMessageCenterProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYMessageCenterProtocol)];
+    id<ThingMessageCenterProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingMessageCenterProtocol)];
     [impl gotoMessageCenterViewControllerWithAnimated:YES];
 }
 
 - (void)gotoHelpCenter {
-    id<TYHelpCenterProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYHelpCenterProtocol)];
+    id<ThingHelpCenterProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingHelpCenterProtocol)];
     [impl gotoHelpCenter];
 }
 
 - (void)requestMallPage {
-    id<TYMallProtocol> mallImpl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYMallProtocol)];
+    id<ThingMallProtocol> mallImpl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingMallProtocol)];
     [mallImpl checkIfMallEnableForCurrentUser:^(BOOL enable, NSError *error) {
       if (error) {
           [Alert showBasicAlertOnVC:self withTitle:@"" message:error.description];
       } else {
           // if enable is true
           if (enable) {
-              [mallImpl requestMallPage:TYMallPageTypeHome completionBlock:^(__kindof UIViewController *page, NSError *error) {
+              [mallImpl requestMallPage:ThingMallPageTypeHome completionBlock:^(__kindof UIViewController *page, NSError *error) {
                   [self.navigationController pushViewController:page animated:YES];
               }];
           } else {
@@ -211,7 +211,7 @@
 }
 
 - (void)gotoAmazonAlexa {
-    id<TYValueAddedServiceProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYValueAddedServiceProtocol)];
+    id<ThingValueAddedServiceProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingValueAddedServiceProtocol)];
 
     // 跳转到 Alexa 快绑页面
     [impl goToAmazonAlexaLinkViewControllerSuccess:^(BOOL result) {
@@ -222,7 +222,7 @@
 }
 
 - (void)gotoAddLightScene {
-    id<TYLightSceneProtocol> impl = [[TuyaSmartBizCore sharedInstance] serviceOfProtocol:@protocol(TYLightSceneProtocol)];
+    id<ThingLightSceneProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingLightSceneProtocol)];
     [impl createNewLightScene];
 }
 
@@ -260,9 +260,9 @@
     }
 }
 
-- (TuyaSmartHomeManager *)homeManager {
+- (ThingSmartHomeManager *)homeManager {
     if (!_homeManager) {
-        _homeManager = [[TuyaSmartHomeManager alloc] init];
+        _homeManager = [[ThingSmartHomeManager alloc] init];
     }
     return _homeManager;
 }
