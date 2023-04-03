@@ -1,0 +1,11 @@
+{
+    "config": {
+        "appId": <#AppId#>,
+        "thingAppKey": "<#AppKey#>",
+        "appScheme": "bizPackageSample",
+        "needBle": true
+    },
+    "colors":{
+        "themeColor": "#DBDBDB",
+    }
+}
