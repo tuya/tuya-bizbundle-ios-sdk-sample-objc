@@ -4,6 +4,8 @@
         "thingAppKey": "<#AppKey#>",
         "appScheme": "bizPackageSample",
         "needBle": true
+        "needBle": true,
+        "is_support_home_manager": true
     },
     "colors":{
         "themeColor": "#DBDBDB",
