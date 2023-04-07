@@ -4,9 +4,13 @@
 //
 //  Copyright (c) 2014-2021 Tuya Inc. (https://developer.tuya.com/)
 
+#import <ThingSmartBizCore/ThingSmartBizCore.h>
+#import <ThingModuleServices/ThingSocialProtocol.h>
+
+#import <SVProgressHUD/SVProgressHUD.h>
 #import "AppDelegate.h"
 #import "AppKey.h"
-#import "SVProgressHUD.h"
+
 
 @interface AppDelegate ()
 
@@ -41,6 +45,23 @@
     }
     [[UIApplication sharedApplication] delegate].window = self.window;
     [self.window makeKeyAndVisible];
+    return YES;
+}
+
+
+#pragma mark - URL Scheme 
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler {
+    id<ThingSocialProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingSocialProtocol)];
+    [impl application:application continueUserActivity:userActivity restorationHandler:restorationHandler];
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    if ([[url scheme] hasPrefix:@"wx"]) {
+        id<ThingSocialProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingSocialProtocol)];
+        return [impl application:app openURL:url options:options];
+    }
     return YES;
 }
 

@@ -156,6 +156,14 @@
                     break;
             }
             break;
+        case 12:// share
+            switch (indexPath.row) {
+                case 0:
+                    [self gotoShare];
+                    break;
+                default:break;
+            }
+            break;
         default:
             break;
     }
@@ -224,6 +232,29 @@
 - (void)gotoAddLightScene {
     id<ThingLightSceneProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingLightSceneProtocol)];
     [impl createNewLightScene];
+}
+
+- (void)gotoShare {
+
+    id<ThingSocialProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingSocialProtocol)];
+
+    static dispatch_once_t onceToken;
+    dispatch_once (&onceToken, ^{
+        [impl registerWithType:ThingSocialWechat appKey:@"wx90d34ffcd1b02f8e" appSecret:@"af87ac9961130297bed2ba8436be5b7e" universalLink:@"https://tuyaSmart.app.tuya.com"];
+    });
+
+    /// 分享文本
+    if ([impl avaliableForType:ThingSocialWechat]) {
+        ThingSocialShareModel *shareModel = [[ThingSocialShareModel alloc] initWithShareType:ThingSocialWechat];
+        shareModel.content = @"content";
+        shareModel.mediaType = ThingSocialShareContentText;
+        [impl shareTo:ThingSocialWechat shareModel:shareModel success:^{
+
+        } failure:^{
+
+        }];
+    }
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

@@ -3,26 +3,37 @@ source 'https://registry.code.tuya-inc.top/tuyaIOS/tuyabusinessspecs'
 source "https://github.com/TuyaInc/TuyaPublicSpecs.git"
 source 'https://github.com/CocoaPods/Specs.git'
 
-use_frameworks!
+#use_frameworks!
 
 platform :ios, '11.0'
 inhibit_all_warnings!
 
 target 'tuya-bizbundle-ios-sample-objc_Example' do
   pod 'SVProgressHUD'
-  pod 'ThingSmartHomeKit'
+  pod 'ThingSmartHomeKit', '~> 5.0.0'
   #pod 'ThingSmartActivatorBizBundle'
   #pod 'ThingSmartCameraPanelBizBundle'
   #pod 'ThingSmartCameraRNPanelBizBundle'
   #pod 'ThingSmartCameraSettingBizBundle'
   #pod 'ThingSmartCloudServiceBizBundle'
   #pod 'ThingSmartDeviceDetailBizBundle'
-  pod 'ThingSmartFamilyBizBundle'
-  pod 'ThingUIKit', '1.19.0-anonymize2.3'
-  pod 'ThingFoundationKit', '1.18.11-remove-reachability.1'
-  #pod 'ThingSmartHelpCenterBizBundle'
-  #pod 'ThingSmartMallBizBundle'
-  #pod 'ThingSmartMessageBizBundle'
+
+  # 家庭
+  pod 'ThingSmartFamilyBizBundle', '~> 5.0.0'
+  
+  # 帮助
+  pod 'ThingSmartHelpCenterBizBundle', '~> 5.0.0'
+
+  # 消息中心
+  pod 'ThingSmartMessageBizBundle', '~> 5.0.0'
+
+  # 微信分享需引入（可选）
+  # pod 'ThingSocialWeChat', '~> 5.0.0'
+  # QQ 分享需引入（可选）
+  # pod 'ThingSocialQQ', '~> 5.0.0'
+  # 社交分享业务包
+  pod 'ThingSmartShareBizBundle', '~> 5.0.0'
+
   #pod 'ThingSmartOTABizBundle'
   #pod 'ThingSmartPanelBizBundle'
   #pod 'ThingSmartSceneBizBundle'
