@@ -1,9 +1,8 @@
 source 'https://github.com/tuya/tuya-pod-specs.git'
-source 'https://registry.code.tuya-inc.top/tuyaIOS/tuyabusinessspecs'
 source "https://github.com/TuyaInc/TuyaPublicSpecs.git"
 source 'https://github.com/CocoaPods/Specs.git'
 
-#use_frameworks!
+use_frameworks!
 
 platform :ios, '11.0'
 inhibit_all_warnings!
