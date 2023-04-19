@@ -12,6 +12,7 @@
 #import <ThingModuleServices/ThingModuleServices.h>
 #import <ThingSmartBizCore/ThingSmartBizCore.h>
 #import "DeviceListTableViewController.h"
+#import <ThingSmartMiniAppBizBundle/ThingSmartMiniAppBizBundle.h>
 
 @interface MainTableViewController () <ThingSmartHomeManagerDelegate>
 
@@ -164,6 +165,14 @@
                 default:break;
             }
             break;
+        case 13:// mini app
+            switch (indexPath.row) {
+                case 0:
+                    [self gotoMiniApp];
+                    break;
+                default:break;
+            }
+            break;
         default:
             break;
     }
@@ -256,6 +265,12 @@
     }
 
 }
+
+- (void)gotoMiniApp {
+    // 以id形式打开小程序
+    [[ThingMiniAppClient coreClient] openMiniAppByAppId:@"tydhopggfziofo1h9h"];
+}
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"show-device-list-detail"] && [segue.destinationViewController isKindOfClass:[DeviceListTableViewController class]]) {
