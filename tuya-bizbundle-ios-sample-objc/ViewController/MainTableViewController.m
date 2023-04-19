@@ -12,6 +12,7 @@
 #import <ThingModuleServices/ThingModuleServices.h>
 #import <ThingSmartBizCore/ThingSmartBizCore.h>
 #import "DeviceListTableViewController.h"
+#import <ThingSmartMiniAppBizBundle/ThingSmartMiniAppBizBundle.h>
 
 @interface MainTableViewController () <ThingSmartHomeManagerDelegate>
 
@@ -156,6 +157,22 @@
                     break;
             }
             break;
+        case 12:// share
+            switch (indexPath.row) {
+                case 0:
+                    [self gotoShare];
+                    break;
+                default:break;
+            }
+            break;
+        case 13:// mini app
+            switch (indexPath.row) {
+                case 0:
+                    [self gotoMiniApp];
+                    break;
+                default:break;
+            }
+            break;
         default:
             break;
     }
@@ -225,6 +242,35 @@
     id<ThingLightSceneProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingLightSceneProtocol)];
     [impl createNewLightScene];
 }
+
+- (void)gotoShare {
+
+    id<ThingSocialProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingSocialProtocol)];
+
+    static dispatch_once_t onceToken;
+    dispatch_once (&onceToken, ^{
+        [impl registerWithType:ThingSocialWechat appKey:@"xx" appSecret:@"xx" universalLink:@"https://xx.com"];
+    });
+
+    /// 分享文本
+    if ([impl avaliableForType:ThingSocialWechat]) {
+        ThingSocialShareModel *shareModel = [[ThingSocialShareModel alloc] initWithShareType:ThingSocialWechat];
+        shareModel.content = @"content";
+        shareModel.mediaType = ThingSocialShareContentText;
+        [impl shareTo:ThingSocialWechat shareModel:shareModel success:^{
+
+        } failure:^{
+
+        }];
+    }
+
+}
+
+- (void)gotoMiniApp {
+    // 以id形式打开小程序
+    [[ThingMiniAppClient coreClient] openMiniAppByAppId:@"tydhopggfziofo1h9h"];
+}
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"show-device-list-detail"] && [segue.destinationViewController isKindOfClass:[DeviceListTableViewController class]]) {
