@@ -3,6 +3,7 @@ source "https://github.com/TuyaInc/TuyaPublicSpecs.git"
 source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks!
+use_modular_headers!
 
 platform :ios, '11.0'
 inhibit_all_warnings!
