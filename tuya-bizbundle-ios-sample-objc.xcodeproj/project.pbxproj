@@ -12,7 +12,6 @@
 		344EB66D25F60DB400C115E2 /* TuyaSmartMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 344EB66F25F60DB400C115E2 /* TuyaSmartMain.storyboard */; };
 		344EB67425F6132E00C115E2 /* SceneList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 344EB67625F6132E00C115E2 /* SceneList.storyboard */; };
 		344EBA6825F64BA900C115E2 /* thing_custom_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 344EBA6725F64BA900C115E2 /* thing_custom_config.json */; };
-		34D5C8F025EF65EC00C22B14 /* t_s.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 34D5C8EF25EF65EC00C22B14 /* t_s.bmp */; };
 		34D5C90A25EF68A900C22B14 /* RegisterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D5C90525EF68A900C22B14 /* RegisterTableViewController.m */; };
 		34D5C90B25EF68A900C22B14 /* ResetPasswordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D5C90625EF68A900C22B14 /* ResetPasswordTableViewController.m */; };
 		34D5C90C25EF68A900C22B14 /* LoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D5C90825EF68A900C22B14 /* LoginTableViewController.m */; };
@@ -68,7 +67,6 @@
 		344EB67A25F6134400C115E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SceneList.strings"; sourceTree = "<group>"; };
 		344EB96925F630E400C115E2 /* tuya-bizbundle-ios-sample-objc_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "tuya-bizbundle-ios-sample-objc_Example.entitlements"; sourceTree = "<group>"; };
 		344EBA6725F64BA900C115E2 /* thing_custom_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = thing_custom_config.json; sourceTree = "<group>"; };
-		34D5C8EF25EF65EC00C22B14 /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = t_s.bmp; sourceTree = "<group>"; };
 		34D5C90425EF68A900C22B14 /* LoginTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTableViewController.h; sourceTree = "<group>"; };
 		34D5C90525EF68A900C22B14 /* RegisterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterTableViewController.m; sourceTree = "<group>"; };
 		34D5C90625EF68A900C22B14 /* ResetPasswordTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordTableViewController.m; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 				AFA3298025D0E3500065E54E /* ViewController */,
 				AFA329B625D0E3500065E54E /* Helper */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
-				34D5C8EF25EF65EC00C22B14 /* t_s.bmp */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for tuya-bizbundle-ios-sample-objc";
@@ -432,7 +429,6 @@
 				AFA329D325D0E3500065E54E /* Main.storyboard in Resources */,
 				AFA329D225D0E3500065E54E /* Register.storyboard in Resources */,
 				AFA32A1225D0EBAB0065E54E /* Localizable.strings in Resources */,
-				34D5C8F025EF65EC00C22B14 /* t_s.bmp in Resources */,
 				344EB66D25F60DB400C115E2 /* TuyaSmartMain.storyboard in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				344EBA6825F64BA900C115E2 /* thing_custom_config.json in Resources */,
