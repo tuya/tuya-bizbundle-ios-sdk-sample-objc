@@ -10,7 +10,7 @@ inhibit_all_warnings!
 
 target 'tuya-bizbundle-ios-sample-objc_Example' do
   pod 'SVProgressHUD'
-  pod 'ThingSmartHomeKit', '~> 5.0.0'
+  pod 'ThingSmartHomeKit', '~> 5.1.0'
   #pod 'ThingSmartActivatorBizBundle'
   #pod 'ThingSmartCameraPanelBizBundle'
   #pod 'ThingSmartCameraRNPanelBizBundle'
@@ -19,13 +19,13 @@ target 'tuya-bizbundle-ios-sample-objc_Example' do
   #pod 'ThingSmartDeviceDetailBizBundle'
 
   # 家庭
-  pod 'ThingSmartFamilyBizBundle', '~> 5.0.0'
+  pod 'ThingSmartFamilyBizBundle', '~> 5.1.0'
   
   # 帮助
-  pod 'ThingSmartHelpCenterBizBundle', '~> 5.0.0'
+  pod 'ThingSmartHelpCenterBizBundle', '~> 5.1.0'
 
   # 消息中心
-  pod 'ThingSmartMessageBizBundle', '~> 5.0.0'
+  pod 'ThingSmartMessageBizBundle', '~> 5.1.0'
 
   # 微信分享需引入（可选）
   # pod 'ThingSocialWeChat', '~> 5.0.0'
@@ -38,7 +38,7 @@ target 'tuya-bizbundle-ios-sample-objc_Example' do
   #pod 'ThingSmartPanelBizBundle'
   #pod 'ThingSmartSceneBizBundle'
   #pod 'ThingSmartSkillQuickBindBizBundle'
-  #pod 'ThingSmartLightSceneBizBundle', '5.0.0-rc.3.10'
+  #pod 'ThingSmartLightSceneBizBundle'
   
   # 从 iot.tuya.com 构建和获取 ThingSmartCryption
   #  购买正式版后，需重新在 IoT 平台构建 SDK 并重新集成
