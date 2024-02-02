@@ -24,7 +24,6 @@
         self.home.delegate = self;
         [self updateHomeDetail];
         [[ThingSmartBizCore sharedInstance] registerService:@protocol(ThingSmartHomeDataProtocol) withInstance:self];
-        [[ThingSmartBizCore sharedInstance] registerService:@protocol(ThingRNCameraProtocol) withInstance:self];
     }
 }
 
