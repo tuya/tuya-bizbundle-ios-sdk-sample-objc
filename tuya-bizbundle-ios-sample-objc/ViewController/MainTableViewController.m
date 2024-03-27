@@ -13,6 +13,8 @@
 #import <ThingSmartBizCore/ThingSmartBizCore.h>
 #import "DeviceListTableViewController.h"
 #import <ThingSmartMiniAppBizBundle/ThingSmartMiniAppBizBundle.h>
+#define ACTION_NULL ACTION(nil)
+#define ACTION(sel) [NSValue valueWithPointer:(sel)]
 
 @interface MainTableViewController () <ThingSmartHomeManagerDelegate>
 
@@ -20,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentHomeLabel;
 
 @property (strong, nonatomic) ThingSmartHomeManager *homeManager;
+
+@property (strong, nonatomic) NSArray<NSArray<NSValue *> *> *actionMapping;
 
 @end
 
@@ -30,6 +34,7 @@
     [self initiateCurrentHome];
     [[ThingSmartBizCore sharedInstance] registerService:@protocol(ThingSmartHomeDataProtocol) withInstance:self];
     [[ThingSmartBizCore sharedInstance] registerService:@protocol(ThingSmartHouseIndexProtocol) withInstance:self];
+    [self setupActionMapping];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -47,6 +52,27 @@
     } failure:^(NSError *error) {
         
     }];
+}
+
+- (void)setupActionMapping {
+    self.actionMapping = @[
+        @[ACTION(@selector(gotoFamilyManagement)), ACTION_NULL, ACTION(@selector(logoutTapped:))],
+        @[ACTION(@selector(gotoCategoryViewController))],
+        @[ACTION_NULL],
+        @[ACTION_NULL],
+        @[ACTION_NULL],
+
+        @[ACTION(@selector(gotoAddScene))],
+        @[ACTION(@selector(gotoMessageCenterViewControllerWithAnimated))],
+        @[ACTION(@selector(gotoHelpCenter))],
+        @[ACTION(@selector(requestMallPage))],
+        @[ACTION_NULL],
+        
+        @[ACTION(@selector(gotoAmazonAlexa))],
+        @[ACTION(@selector(gotoAddLightScene))],
+        @[ACTION(@selector(gotoShare))],
+        @[ACTION(@selector(gotoMiniApp))],
+    ];
 }
 
 - (ThingSmartHome *)getCurrentHome {
@@ -111,70 +137,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
-    switch (indexPath.section) {
-        case 0:
-            switch (indexPath.row) {
-                case 0:
-                    [self gotoFamilyManagement];
-                    break;
-                case 2:
-                    [self logoutTapped:self.logoutButton];
-                    break;
-                default:
-                    break;
-            }
-            break;
-        case 1:
-            [self gotoCategoryViewController];
-            break;
-        case 5:
-            switch (indexPath.row) {
-                case 0:
-                    [self gotoAddScene];
-                    break;
-                default:
-                    break;
-            }
-            break;
-        case 6:
-            [self gotoMessageCenterViewControllerWithAnimated];
-            break;
-        case 7:
-            [self gotoHelpCenter];
-            break;
-        case 8:
-            [self requestMallPage];
-            break;
-        case 10:
-            [self gotoAmazonAlexa];
-            break;
-        case 11:
-            switch (indexPath.row) {
-                case 0:
-                    [self gotoAddLightScene];
-                    break;
-                default:
-                    break;
-            }
-            break;
-        case 12:// share
-            switch (indexPath.row) {
-                case 0:
-                    [self gotoShare];
-                    break;
-                default:break;
-            }
-            break;
-        case 13:// mini app
-            switch (indexPath.row) {
-                case 0:
-                    [self gotoMiniApp];
-                    break;
-                default:break;
-            }
-            break;
-        default:
-            break;
+
+    if (self.actionMapping[indexPath.section] && self.actionMapping[indexPath.section][indexPath.row]) {
+        SEL selector = [self.actionMapping[indexPath.section][indexPath.row] pointerValue];
+        if (selector && [self respondsToSelector:selector]) {
+            [self performSelector:selector withObject:nil afterDelay:0];
+        }
     }
 }
 
