@@ -1,0 +1,14 @@
+{
+    "config":
+    {
+        "appId":"",
+        "thingAppKey":"",
+        "appScheme":"",
+        "needBle":true,
+        "is_support_home_manager":true
+    },
+    "colors":
+    {
+        "themeColor":"#DBDBDB"
+    }
+}

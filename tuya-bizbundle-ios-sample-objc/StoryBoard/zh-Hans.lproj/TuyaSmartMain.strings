@@ -1,0 +1,98 @@
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "1xG-rO-fIK"; */
+"1xG-rO-fIK.normalTitle" = "登出";
+
+/* Class = "UILabel"; text = "Help center"; ObjectID = "3km-Og-cJR"; */
+"3km-Og-cJR.text" = "常见问题与反馈";
+
+/* Class = "UILabel"; text = "Device detail"; ObjectID = "3lz-Zp-v3b"; */
+"3lz-Zp-v3b.text" = "设备详情";
+
+/* Class = "UILabel"; text = "Message"; ObjectID = "515-sj-LeL"; */
+"515-sj-LeL.text" = "消息中心";
+
+/* Class = "UITableViewSection"; headerTitle = "TuyaSmartPanelBizBundle"; ObjectID = "6RV-ur-bZC"; */
+"6RV-ur-bZC.headerTitle" = "设备控制 UI 业务包";
+
+/* Class = "UITableViewSection"; headerTitle = "TuyaSmartDeviceDetailBizBundle"; ObjectID = "7tf-zn-Pet"; */
+"7tf-zn-Pet.headerTitle" = "设备详情 UI 业务包";
+
+/* Class = "UITableViewSection"; headerTitle = "TuyaSmartCameraPanelBizBundle"; ObjectID = "EuV-Vb-iz9"; */
+"EuV-Vb-iz9.headerTitle" = "IPC UI 业务包";
+
+/* Class = "UILabel"; text = "Device panel"; ObjectID = "H8l-M2-wET"; */
+"H8l-M2-wET.text" = "设备面板";
+
+/* Class = "UITableViewSection"; headerTitle = "TuyaSmartOTABizBundle"; ObjectID = "HlL-ku-5Yw"; */
+"HlL-ku-5Yw.headerTitle" = "OTA UI 业务包";
+
+/* Class = "UITableViewSection"; headerTitle = "TuyaSmartFamilyBizBundle"; ObjectID = "Iqf-fO-ndV"; */
+"Iqf-fO-ndV.headerTitle" = "家庭管理 UI 业务包";
+
+/* Class = "UILabel"; text = "Current Home"; ObjectID = "JJd-eD-Gon"; */
+"JJd-eD-Gon.text" = "当前家庭";
+
+/* Class = "UINavigationItem"; title = "TuyaSmart"; ObjectID = "LwY-Qy-9b8"; */
+"LwY-Qy-9b8.title" = "涂鸦智能";
+
+/* Class = "UILabel"; text = "IPC panel"; ObjectID = "OOv-cv-6tr"; */
+"OOv-cv-6tr.text" = "IPC 面板";
+
+/* Class = "UILabel"; text = "Photo library"; ObjectID = "U7p-7u-lcw"; */
+"U7p-7u-lcw.text" = "相册";
+
+/* Class = "UILabel"; text = "Camera paly back panel"; ObjectID = "Z7J-6D-pLR"; */
+"Z7J-6D-pLR.text" = "回放";
+
+/* Class = "UITableViewSection"; headerTitle = "TuyaSmartMessageBizBundle"; ObjectID = "ZO8-Eb-9ke"; */
+"ZO8-Eb-9ke.headerTitle" = "消息中心 UI 业务包";
+
+/* Class = "UITableViewSection"; headerTitle = "TuyaSmartMallBizBundle"; ObjectID = "aB6-68-zPm"; */
+"aB6-68-zPm.headerTitle" = "商城 UI 业务包";
+
+/* Class = "UILabel"; text = "Family"; ObjectID = "ajN-1I-D2Z"; */
+"ajN-1I-D2Z.text" = "家庭管理";
+
+/* Class = "UITableViewSection"; headerTitle = "TuyaSmartHelpCenterBizBundle"; ObjectID = "c1p-0q-eK3"; */
+"c1p-0q-eK3.headerTitle" = "常见问题与反馈 UI 业务包";
+
+/* Class = "UITableViewSection"; headerTitle = "TuyaSmartSceneBizBundle"; ObjectID = "dj0-eZ-2oU"; */
+"dj0-eZ-2oU.headerTitle" = "场景 UI 业务包";
+
+/* Class = "UILabel"; text = "Edit scene"; ObjectID = "exn-8d-hBg"; */
+"exn-8d-hBg.text" = "编辑场景";
+
+/* Class = "UITableViewSection"; headerTitle = "TuyaSmartActivatorBizBundle"; ObjectID = "gln-7n-wXC"; */
+"gln-7n-wXC.headerTitle" = "设备配网 UI 业务包";
+
+/* Class = "UILabel"; text = "Activator"; ObjectID = "jyb-K5-lUu"; */
+"jyb-K5-lUu.text" = "配网";
+
+/* Class = "UILabel"; text = "Check update"; ObjectID = "nM6-3j-IXp"; */
+"nM6-3j-IXp.text" = "检查更新";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "ocd-rF-R1Z"; */
+"ocd-rF-R1Z.text" = "详情";
+
+/* Class = "UILabel"; text = "Camera cloud storage panel"; ObjectID = "rdy-UL-A31"; */
+"rdy-UL-A31.text" = "云存储";
+
+/* Class = "UILabel"; text = "Camera message center panel"; ObjectID = "t2e-hA-dlz"; */
+"t2e-hA-dlz.text" = "消息中心";
+
+/* Class = "UILabel"; text = "New scene"; ObjectID = "wGS-t3-vmG"; */
+"wGS-t3-vmG.text" = "新建场景";
+
+/* Class = "UILabel"; text = "Mall"; ObjectID = "wLq-m8-X54"; */
+"wLq-m8-X54.text" = "商城";
+
+/* Class = "UITableViewSection"; headerTitle = "TuyaSmartLightSceneBizBundle"; ObjectID = "1dd-AH-nlg"; */
+"1dd-AH-nlg.headerTitle" = "灯光场景 UI 业务包";
+
+/* Class = "UILabel"; text = "New light scene"; ObjectID = "VHC-vQ-qgM"; */
+"VHC-vQ-qgM.text" = "新建灯光场景";
+
+/* Class = "UILabel"; text = "Edit light scene"; ObjectID = "FbB-IV-vmr"; */
+"FbB-IV-vmr.text" = "编辑灯光场景";
+
+"Kk8-R2-XWC.text" = "分享文字到微信";
