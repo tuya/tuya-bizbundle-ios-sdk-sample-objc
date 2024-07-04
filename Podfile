@@ -11,6 +11,7 @@ inhibit_all_warnings!
 target 'tuya-bizbundle-ios-sample-objc_Example' do
   pod 'SVProgressHUD'
   pod 'ThingSmartHomeKit', '~> 5.8.0'
+  pod 'ThingSmartHomeKit', '~> 5.14.0'
   #pod 'ThingSmartActivatorBizBundle'
   #pod 'ThingSmartCameraPanelBizBundle'
   #pod 'ThingSmartCameraRNPanelBizBundle'
@@ -20,19 +21,25 @@ target 'tuya-bizbundle-ios-sample-objc_Example' do
 
   # 家庭
   pod 'ThingSmartFamilyBizBundle', '~> 5.8.0'
+  pod 'ThingSmartFamilyBizBundle', '~> 5.14.0'
   
   # 帮助
   pod 'ThingSmartHelpCenterBizBundle', '~> 5.8.0'
+  pod 'ThingSmartHelpCenterBizBundle', '~> 5.14.0'
 
   # 消息中心
   pod 'ThingSmartMessageBizBundle', '~> 5.8.0'
+  pod 'ThingSmartMessageBizBundle', '~> 5.14.0'
 
   # 微信分享需引入（可选）
   # pod 'ThingSocialWeChat', '~> 5.0.0'
+  # pod 'ThingSocialWeChat', '~> 5.14.0.0'
   # QQ 分享需引入（可选）
   # pod 'ThingSocialQQ', '~> 5.0.0'
+  # pod 'ThingSocialQQ', '~> 5.14.0.0'
   # 社交分享业务包
   pod 'ThingSmartShareBizBundle', '~> 5.8.0'
+  pod 'ThingSmartShareBizBundle', '~> 5.14.0'
 
   #pod 'ThingSmartOTABizBundle'
   #pod 'ThingSmartPanelBizBundle'
@@ -50,9 +57,16 @@ target 'tuya-bizbundle-ios-sample-objc_Example' do
     pod 'ThingSmartBaseKitBizBundle'
     pod 'ThingSmartBizKitBizBundle'
     pod 'ThingSmartDeviceKitBizBundle'
+    pod "ThingSmartMiniAppBizBundle", '~> 5.14.0'
+    pod 'ThingSmartBaseKitBizBundle', '~> 5.14.0'
+    pod 'ThingSmartBizKitBizBundle', '~> 5.14.0'
+    pod 'ThingSmartDeviceKitBizBundle', '~> 5.14.0'
   
   # Marketing BizBundle
   pod 'ThingSmartMarketingBizBundle'
+  #pod 'ThingSmartMarketingBizBundle', '~> 5.14.0'
+  pod 'ThingSmartMallBizBundle', '~> 5.14.0'
+  pod 'ThingSmartThemeManagerBizBundle', '~> 5.14.0'
 
 end
 post_install do |installer|
