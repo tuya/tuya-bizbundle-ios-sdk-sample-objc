@@ -15,9 +15,6 @@
 @implementation SceneDelegate
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
     
-    // If you are developing an app based on UIScene, you need to call this method.
-    [[ThingSmartBizCore sharedInstance] enableWithUIScene:scene];
-    
     self.window = [[UIWindow alloc] initWithWindowScene:scene];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.frame = [[UIScreen mainScreen] bounds];

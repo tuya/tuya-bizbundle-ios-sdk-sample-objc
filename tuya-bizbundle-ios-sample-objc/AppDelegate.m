@@ -34,7 +34,7 @@
     [self registPush:application];
     
     if (@available(iOS 13, *)) {
-        // If you are developing an app based on UIScene, you need to call [[ThingSmartBizCore sharedInstance] enableWithUIScene:scene]; in SceneDelegate scene:willConnectToSession:options: .
+        // based on UIScene
     }
     else {
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
