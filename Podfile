@@ -65,6 +65,7 @@ target 'tuya-bizbundle-ios-sample-objc_Example' do
   # Marketing BizBundle
   pod 'ThingSmartMarketingBizBundle'
   #pod 'ThingSmartMarketingBizBundle', '~> 5.14.0'
+  pod 'ThingSmartMarketingBizBundle', '~> 5.14.0'
   pod 'ThingSmartMallBizBundle', '~> 5.14.0'
   pod 'ThingSmartThemeManagerBizBundle', '~> 5.14.0'
 
