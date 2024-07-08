@@ -1,14 +1,16 @@
 {
     "config":
     {
-        "appId":"",
-        "thingAppKey":"",
-        "appScheme":"",
+        "appId":"815467959",
+        "thingAppKey":"k4wkdvjgc3tuuwwmg4jj",
+        "appScheme":"tuyaSmart",
         "needBle":true,
-        "is_support_home_manager":true
+        "is_support_home_manager":true,
+        "hotspotPrefixs": ["AAA", "BBB"]
+        
     },
     "colors":
     {
-        "themeColor":"#DBDBDB"
+        "themeColor":"#ff0000"
     }
 }
