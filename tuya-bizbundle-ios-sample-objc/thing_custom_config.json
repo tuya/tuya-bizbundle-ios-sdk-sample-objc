@@ -11,6 +11,9 @@
     },
     "colors":
     {
-        "themeColor":"#ff0000"
+        "themeColor":"#FFA228",
+        "backgroundColor":"#FFFFFF",
+        "navigationBarColor": "#000000",
+        "alertMaskAlpha": 0.4
     }
 }

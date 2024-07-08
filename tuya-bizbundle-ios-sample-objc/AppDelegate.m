@@ -34,7 +34,16 @@
     [self registPush:application];
     
     if (@available(iOS 13, *)) {
-        // based on UIScene
+        UINavigationBar * navigationBar = [UINavigationBar appearance];
+        UINavigationBarAppearance * navigationBarAppearance = [[UINavigationBarAppearance alloc] init];
+        navigationBarAppearance.backgroundColor = UIColor.blackColor;
+        navigationBarAppearance.titleTextAttributes =  @{
+            NSForegroundColorAttributeName : UIColor.redColor,
+            NSFontAttributeName:[UIFont systemFontOfSize:22]
+        };
+        
+        navigationBar.standardAppearance = navigationBarAppearance;
+        navigationBar.scrollEdgeAppearance = navigationBarAppearance;
     }
     else {
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
