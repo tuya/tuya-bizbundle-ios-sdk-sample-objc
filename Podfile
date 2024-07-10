@@ -10,48 +10,54 @@ inhibit_all_warnings!
 
 target 'tuya-bizbundle-ios-sample-objc_Example' do
   pod 'SVProgressHUD'
-  pod 'ThingSmartHomeKit', '~> 5.8.0'
-  #pod 'ThingSmartActivatorBizBundle'
-  #pod 'ThingSmartCameraPanelBizBundle'
-  #pod 'ThingSmartCameraRNPanelBizBundle'
-  #pod 'ThingSmartCameraSettingBizBundle'
-  #pod 'ThingSmartCloudServiceBizBundle'
-  #pod 'ThingSmartDeviceDetailBizBundle'
+  pod 'ThingSmartHomeKit', '~> 5.14.0'
+  pod 'ThingSmartActivatorBizBundle', '~> 5.14.0'
+  pod 'ThingSmartCameraPanelBizBundle', '~> 5.14.0'
+  pod 'ThingSmartCameraRNPanelBizBundle', '~> 5.14.0'
+  pod 'ThingSmartCameraSettingBizBundle', '~> 5.14.0'
+  pod 'ThingSmartCloudServiceBizBundle', '~> 5.14.0'
+  pod 'ThingSmartDeviceDetailBizBundle', '~> 5.14.0'
 
-  # 家庭
-  pod 'ThingSmartFamilyBizBundle', '~> 5.8.0'
+  # Family
+  pod 'ThingSmartFamilyBizBundle', '~> 5.14.0'
   
-  # 帮助
-  pod 'ThingSmartHelpCenterBizBundle', '~> 5.8.0'
+  # Help
+  pod 'ThingSmartHelpCenterBizBundle', '~> 5.14.0'
 
-  # 消息中心
-  pod 'ThingSmartMessageBizBundle', '~> 5.8.0'
+  # Message Center
+  pod 'ThingSmartMessageBizBundle', '~> 5.14.0'
 
-  # 微信分享需引入（可选）
-  # pod 'ThingSocialWeChat', '~> 5.0.0'
-  # QQ 分享需引入（可选）
-  # pod 'ThingSocialQQ', '~> 5.0.0'
-  # 社交分享业务包
-  pod 'ThingSmartShareBizBundle', '~> 5.8.0'
+  # Required for WeChat sharing (optional)
+  # pod 'ThingSocialWeChat', '~> 5.14.0.0'
+  # Required for QQ sharing (optional)
+  # pod 'ThingSocialQQ', '~> 5.14.0.0'
+  # Social Sharing Business Bundle
+  pod 'ThingSmartShareBizBundle', '~> 5.14.0'
 
-  #pod 'ThingSmartOTABizBundle'
-  #pod 'ThingSmartPanelBizBundle'
-  #pod 'ThingSmartSceneBizBundle'
-  #pod 'ThingSmartSkillQuickBindBizBundle'
-  #pod 'ThingSmartLightSceneBizBundle'
+  # pod 'ThingSmartOTABizBundle'
+  # pod 'ThingSmartPanelBizBundle'
+  # pod 'ThingSmartSceneBizBundle'
+  # pod 'ThingSmartSkillQuickBindBizBundle'
+  # pod 'ThingSmartLightSceneBizBundle'
   
-  # 从 iot.tuya.com 构建和获取 ThingSmartCryption
-  #  购买正式版后，需重新在 IoT 平台构建 SDK 并重新集成
-  # ./ 代表将 `ios_core_sdk.tar.gz` 解压之后所在目录与 `podfile` 同级
-  # 若自定义存放目录，可以修改 `path` 为自定义目录层级
+  # Build and obtain ThingSmartCryption from iot.tuya.com
+  # After purchasing the official version, you need to rebuild the SDK on the IoT platform and reintegrate it
+  # ./ represents the directory where `ios_core_sdk.tar.gz` is extracted to the same level as the `podfile`
+  # If you store it in a custom directory, you can modify `path` to the custom directory level
   pod 'ThingSmartCryption', :path => './ios_core_sdk'
-  # 小程序业务包
-    pod "ThingSmartMiniAppBizBundle"
-    pod 'ThingSmartBaseKitBizBundle'
-    pod 'ThingSmartBizKitBizBundle'
-    pod 'ThingSmartDeviceKitBizBundle'
+  # Mini Program Business Bundle
+  pod "ThingSmartMiniAppBizBundle", '~> 5.14.0'
+  pod 'ThingSmartBaseKitBizBundle', '~> 5.14.0'
+  pod 'ThingSmartBizKitBizBundle', '~> 5.14.0'
+  pod 'ThingSmartDeviceKitBizBundle', '~> 5.14.0'
+  
+  # Marketing BizBundle
+  pod 'ThingSmartMarketingBizBundle', '~> 5.14.0'
+  pod 'ThingSmartMallBizBundle', '~> 5.14.0'
+  pod 'ThingSmartThemeManagerBizBundle', '~> 5.14.0'
 
 end
+
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|

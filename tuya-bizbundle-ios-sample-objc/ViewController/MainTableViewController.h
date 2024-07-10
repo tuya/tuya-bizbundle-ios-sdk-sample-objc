@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DemoBaseTableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MainTableViewController : UITableViewController
+@interface MainTableViewController : DemoBaseTableViewController
 
 @end
 

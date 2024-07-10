@@ -13,8 +13,8 @@
 #import <ThingSmartBizCore/ThingSmartBizCore.h>
 #import "DeviceListTableViewController.h"
 #import <ThingSmartMiniAppBizBundle/ThingSmartMiniAppBizBundle.h>
-#define ACTION_NULL ACTION(nil)
-#define ACTION(sel) [NSValue valueWithPointer:(sel)]
+#import "DemoBaseTableViewController.h"
+
 
 @interface MainTableViewController () <ThingSmartHomeManagerDelegate>
 
@@ -23,7 +23,7 @@
 
 @property (strong, nonatomic) ThingSmartHomeManager *homeManager;
 
-@property (strong, nonatomic) NSArray<NSArray<NSValue *> *> *actionMapping;
+
 
 @end
 
@@ -72,6 +72,8 @@
         @[ACTION(@selector(gotoAddLightScene))],
         @[ACTION(@selector(gotoShare))],
         @[ACTION(@selector(gotoMiniApp))],
+        
+        @[ACTION_NULL],
     ];
 }
 
@@ -135,16 +137,6 @@
 
 #pragma mark - Table view data source
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:true];
-
-    if (self.actionMapping[indexPath.section] && self.actionMapping[indexPath.section][indexPath.row]) {
-        SEL selector = [self.actionMapping[indexPath.section][indexPath.row] pointerValue];
-        if (selector && [self respondsToSelector:selector]) {
-            [self performSelector:selector withObject:nil afterDelay:0];
-        }
-    }
-}
 
 - (void)gotoFamilyManagement {
     id<ThingFamilyProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingFamilyProtocol)];
