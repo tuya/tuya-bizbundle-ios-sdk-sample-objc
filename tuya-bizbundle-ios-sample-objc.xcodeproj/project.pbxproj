@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05B7720D2C461C2200B6CB2C /* ThemeManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B7720B2C461C2200B6CB2C /* ThemeManagerViewController.m */; };
 		31D57AE58D74E66387F69BF1 /* libPods-tuya-bizbundle-ios-sample-objc_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6164B54CDC74E292BE98FAF /* libPods-tuya-bizbundle-ios-sample-objc_Example.a */; };
 		344EB66425F5FBF800C115E2 /* SwitchHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 344EB66225F5FBF800C115E2 /* SwitchHome.storyboard */; };
 		344EB66A25F5FC3900C115E2 /* SwitchHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344EB66925F5FC3900C115E2 /* SwitchHomeTableViewController.m */; };
@@ -59,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05B7720B2C461C2200B6CB2C /* ThemeManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThemeManagerViewController.m; path = Theme/ThemeManagerViewController.m; sourceTree = "<group>"; };
+		05B7720C2C461C2200B6CB2C /* ThemeManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThemeManagerViewController.h; path = Theme/ThemeManagerViewController.h; sourceTree = "<group>"; };
 		1823D7728B25F75DDC16D9C3 /* libPods-tuya-bizbundle-ios-sample-objc_ExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tuya-bizbundle-ios-sample-objc_ExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C2E30BEE4289CC42DCC2D91 /* Pods-tuya-bizbundle-ios-sample-objc_ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tuya-bizbundle-ios-sample-objc_ExampleTests.release.xcconfig"; path = "Target Support Files/Pods-tuya-bizbundle-ios-sample-objc_ExampleTests/Pods-tuya-bizbundle-ios-sample-objc_ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		225AEDE5629956660F1A138B /* Pods-tuya-bizbundle-ios-sample-objc_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tuya-bizbundle-ios-sample-objc_Tests.debug.xcconfig"; path = "Target Support Files/Pods-tuya-bizbundle-ios-sample-objc_Tests/Pods-tuya-bizbundle-ios-sample-objc_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 		AFA3298025D0E3500065E54E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				05B7720C2C461C2200B6CB2C /* ThemeManagerViewController.h */,
+				05B7720B2C461C2200B6CB2C /* ThemeManagerViewController.m */,
 				473CFFB52BB6CE080068AB44 /* Marketing */,
 				E5C146B328BCC6C1005B20A2 /* LightScene */,
 				34D5CA2D25F20CB900C22B14 /* Scene */,
@@ -1218,6 +1223,7 @@
 				34D5C90A25EF68A900C22B14 /* RegisterTableViewController.m in Sources */,
 				473CFFB82BB6CE080068AB44 /* MarketingDemoHomeViewController.m in Sources */,
 				E5C146B628BCC7E1005B20A2 /* LightSceneListTableViewController.m in Sources */,
+				05B7720D2C461C2200B6CB2C /* ThemeManagerViewController.m in Sources */,
 				AFA329BD25D0E3500065E54E /* AppDelegate.m in Sources */,
 				AFA3294225D0E33C0065E54E /* main.m in Sources */,
 				AFA329F125D0E3500065E54E /* Alert.m in Sources */,

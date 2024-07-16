@@ -14,7 +14,7 @@
 #import "DeviceListTableViewController.h"
 #import <ThingSmartMiniAppBizBundle/ThingSmartMiniAppBizBundle.h>
 #import "DemoBaseTableViewController.h"
-
+#import "ThemeManagerViewController.h"
 
 @interface MainTableViewController () <ThingSmartHomeManagerDelegate>
 
@@ -74,6 +74,8 @@
         @[ACTION(@selector(gotoMiniApp))],
         
         @[ACTION_NULL],
+        
+        @[ACTION(@selector(gotoThemeManager))],
     ];
 }
 
@@ -273,4 +275,12 @@
     return _homeManager;
 }
 
+- (void)gotoThemeManager {
+    id<ThingThemeManagerProtocol> themeImpl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingThemeManagerProtocol)];
+    ThemeManagerViewController * vc = [[ThemeManagerViewController alloc] initWithThemeImpl:themeImpl];
+    
+    if (vc) {
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
 @end

@@ -9,11 +9,17 @@
         "hotspotPrefixs": ["AAA", "BBB"]
         
     },
-    "colors":
-    {
-        "themeColor":"#FFA228",
-        "backgroundColor":"#FFFFFF",
-        "navigationBarColor": "#000000",
-        "alertMaskAlpha": 0.4
+    "colors": {
+        "themeColor": "#FFA228"
+    },
+    "blackColors": {
+        "themeColor": "#FF5A28",
+        "backgroundColor": "#000000",
+        "warningColor": "#FF4444",
+        "tipsColor": "#2DDA86",
+        "guideColor": "#1989FA",
+        "navigationBarColor": "#1A1A1A",
+        "tabBarSelectedColor": "#FF5A28",
+        "alertMaskAlpha": 0.7
     }
 }
