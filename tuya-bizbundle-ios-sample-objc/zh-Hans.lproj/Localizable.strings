@@ -135,3 +135,9 @@
 
 /* check IPC device*/
 "This is not a IPC device" = "这不是一个IPC设备";
+
+"Follow the system" = "跟随系统";
+
+"Once turned on, it will follow the system to turn on or off dark mode." = "开启后，将跟随系统打开或关闭深色模式";
+
+"Turn on black mode" = "开启深色模式";
