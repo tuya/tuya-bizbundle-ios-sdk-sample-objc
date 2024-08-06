@@ -15,6 +15,8 @@
 #import <ThingSmartMiniAppBizBundle/ThingSmartMiniAppBizBundle.h>
 #import "DemoBaseTableViewController.h"
 #import "ThemeManagerViewController.h"
+#import <ThingValueAddedServicePlugAPI/ThingValueAddedServicePlugAPI.h>
+#import "tuya_bizbundle_ios_sample_objc_Example-Swift.h"
 
 @interface MainTableViewController () <ThingSmartHomeManagerDelegate>
 
@@ -190,6 +192,8 @@
 }
 
 - (void)gotoAmazonAlexa {
+    [ThingSmartBizCore.sharedInstance registerService:@protocol(ThingValueAddedServicePlugAPIProtocol) withClass:ThingValueAddedServicePlugAPIProtocolImpl.class];
+    
     id<ThingValueAddedServiceProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingValueAddedServiceProtocol)];
 
     // 跳转到 Alexa 快绑页面
