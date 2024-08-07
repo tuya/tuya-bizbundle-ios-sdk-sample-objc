@@ -14,7 +14,9 @@
 #import "DeviceListTableViewController.h"
 #import <ThingSmartMiniAppBizBundle/ThingSmartMiniAppBizBundle.h>
 #import "DemoBaseTableViewController.h"
-
+#import "ThemeManagerViewController.h"
+#import <ThingValueAddedServicePlugAPI/ThingValueAddedServicePlugAPI.h>
+#import "tuya_bizbundle_ios_sample_objc_Example-Swift.h"
 
 @interface MainTableViewController () <ThingSmartHomeManagerDelegate>
 
@@ -74,6 +76,7 @@
         @[ACTION(@selector(gotoMiniApp))],
         
         @[ACTION_NULL],
+        @[ACTION(@selector(gotoThemeManager))],
     ];
 }
 
@@ -188,6 +191,7 @@
 }
 
 - (void)gotoAmazonAlexa {
+    [ThingSmartBizCore.sharedInstance registerService:@protocol(ThingValueAddedServicePlugAPIProtocol) withClass:ThingValueAddedServicePlugAPIProtocolImpl.class];
     id<ThingValueAddedServiceProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingValueAddedServiceProtocol)];
 
     // 跳转到 Alexa 快绑页面
@@ -273,4 +277,11 @@
     return _homeManager;
 }
 
+- (void)gotoThemeManager {
+    id<ThingThemeManagerProtocol> themeImpl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingThemeManagerProtocol)];
+    ThemeManagerViewController * vc = [[ThemeManagerViewController alloc] initWithThemeImpl:themeImpl];
+    if (vc) {
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
 @end
