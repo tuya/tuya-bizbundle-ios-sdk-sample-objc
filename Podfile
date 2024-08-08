@@ -10,53 +10,66 @@ inhibit_all_warnings!
 
 target 'tuya-bizbundle-ios-sample-objc_Example' do
   pod 'SVProgressHUD'
+  pod 'ThingSmartHomeKit', '~> 5.8.0'
+  pod 'ThingSmartHomeKit', '~> 5.14.0'
+  #pod 'ThingSmartActivatorBizBundle'
+  #pod 'ThingSmartCameraPanelBizBundle'
+  #pod 'ThingSmartCameraRNPanelBizBundle'
+  #pod 'ThingSmartCameraSettingBizBundle'
+  #pod 'ThingSmartCloudServiceBizBundle'
+  #pod 'ThingSmartDeviceDetailBizBundle'
 
-  # Build and obtain ThingSmartCryption from iot.tuya.com
-  # After purchasing the official version, SDK needs to be rebuilt on the IoT platform and integrated again
-  # ./ denotes the directory where `ios_core_sdk.tar.gz` is located after extraction, at the same level as `podfile`
-  # If a custom storage directory is used, `path` can be modified to reflect the custom directory hierarchy
+  # 家庭
+  pod 'ThingSmartFamilyBizBundle', '~> 5.8.0'
+  pod 'ThingSmartFamilyBizBundle', '~> 5.14.0'
+  
+  # 帮助
+  pod 'ThingSmartHelpCenterBizBundle', '~> 5.8.0'
+  pod 'ThingSmartHelpCenterBizBundle', '~> 5.14.0'
+
+  # 消息中心
+  pod 'ThingSmartMessageBizBundle', '~> 5.8.0'
+  pod 'ThingSmartMessageBizBundle', '~> 5.14.0'
+
+  # 微信分享需引入（可选）
+  # pod 'ThingSocialWeChat', '~> 5.0.0'
+  # pod 'ThingSocialWeChat', '~> 5.14.0.0'
+  # QQ 分享需引入（可选）
+  # pod 'ThingSocialQQ', '~> 5.0.0'
+  # pod 'ThingSocialQQ', '~> 5.14.0.0'
+  # 社交分享业务包
+  pod 'ThingSmartShareBizBundle', '~> 5.8.0'
+  pod 'ThingSmartShareBizBundle', '~> 5.14.0'
+
+  #pod 'ThingSmartOTABizBundle'
+  #pod 'ThingSmartPanelBizBundle'
+  #pod 'ThingSmartSceneBizBundle'
+  #pod 'ThingSmartSkillQuickBindBizBundle'
+  #pod 'ThingSmartLightSceneBizBundle'
+  
+  # 从 iot.tuya.com 构建和获取 ThingSmartCryption
+  #  购买正式版后，需重新在 IoT 平台构建 SDK 并重新集成
+  # ./ 代表将 `ios_core_sdk.tar.gz` 解压之后所在目录与 `podfile` 同级
+  # 若自定义存放目录，可以修改 `path` 为自定义目录层级
   pod 'ThingSmartCryption', :path => './ios_core_sdk'
-
-  # SDK 
-  pod 'ThingSmartHomeKit', '~> 5.15.0'
-  pod 'ThingSmartMatterKit', '~> 5.11.0'
-  pod 'ThingSmartMatterExtensionKit', '~> 5.0.0'
-  pod 'ThingSmartAppleDeviceKit', '~> 5.2.0'
-  pod 'ThingSmartCameraKit', '~> 5.15.0'
-  pod 'ThingSmartOutdoorKit', '~> 5.4.0'
-  pod 'ThingSmartSweeperKit', '~> 5.0.0'
-  pod 'ThingSmartLockKit', '~> 5.5.0'
-  pod 'ThingSmartBusinessExtensionKit', '~> 5.15.0'
-  pod 'ThingSmartBusinessExtensionKitBLEExtra','~> 5.15.0'
-  pod 'ThingSmartBusinessExtensionKitMatterExtra','~> 5.15.0'
-
-  # UI Biz 
-  pod 'ThingSmartDeviceDetailBizBundle','~> 5.14.0'
-  pod 'ThingSmartSkillQuickBindBizBundle','~> 5.14.0'
-  pod 'ThingSmartHelpCenterBizBundle','~> 5.14.0'
-  pod 'ThingSmartActivatorBizBundle','~> 5.14.0'
-  pod 'ThingSmartMessageBizBundle','~> 5.14.0'
-  pod 'ThingSmartSceneBizBundle','~> 5.14.0'
-  pod 'ThingSmartMallBizBundle','~> 5.14.0'
-  pod 'ThingAdvancedFunctionsBizBundle','~> 5.14.0'
-  pod 'ThingSmartMarketingBizBundle','~> 5.14.0'
-  pod 'ThingSmartGroupHandleBizBundle','~> 5.14.0'
-  pod 'ThingSmartDeviceSyncBizBundle','~> 5.14.0'
-  pod 'ThingSmartPanelBizBundle','~> 5.14.0'
-  pod 'ThingSmartLightSceneBizBundle','~> 5.14.0'
-  pod 'ThingSmartShareBizBundle','~> 5.14.0'
-  pod 'ThingSmartCameraRNPanelBizBundle','~> 5.14.0'
-  pod 'ThingSmartCameraPanelBizBundle','~> 5.14.0'
-  pod 'ThingSmartLangsExtraBizBundle','~> 5.14.0'
-  pod 'ThingSmartFamilyBizBundle','~> 5.14.0'
-  pod 'ThingSmartOTABizBundle','~> 5.14.0'
-  pod 'ThingSmartCameraSettingBizBundle','~> 5.14.0'
-  pod 'ThingSmartCloudServiceBizBundle','~> 5.14.0'
-  pod 'ThingSmartActivatorExtraBizBundle','~> 5.14.0'
-  pod 'ThingSmartThemeManagerBizBundle','~> 5.14.0'
+  # 小程序业务包
+    pod "ThingSmartMiniAppBizBundle"
+    pod 'ThingSmartBaseKitBizBundle'
+    pod 'ThingSmartBizKitBizBundle'
+    pod 'ThingSmartDeviceKitBizBundle'
+    pod "ThingSmartMiniAppBizBundle", '~> 5.14.0'
+    pod 'ThingSmartBaseKitBizBundle', '~> 5.14.0'
+    pod 'ThingSmartBizKitBizBundle', '~> 5.14.0'
+    pod 'ThingSmartDeviceKitBizBundle', '~> 5.14.0'
+  
+  # Marketing BizBundle
+  pod 'ThingSmartMarketingBizBundle'
+  #pod 'ThingSmartMarketingBizBundle', '~> 5.14.0'
+  pod 'ThingSmartMarketingBizBundle', '~> 5.14.0'
+  pod 'ThingSmartMallBizBundle', '~> 5.14.0'
+  pod 'ThingSmartThemeManagerBizBundle', '~> 5.14.0'
 
 end
-
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
