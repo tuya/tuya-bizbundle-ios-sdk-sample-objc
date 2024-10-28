@@ -91,21 +91,25 @@ target 'tuya-bizbundle-ios-sample-objc_Example' do
   
   
   #################
-  # Required SDK
+  # SDK
   #################
   
+  # [Required] Basic
   pod 'ThingSmartHomeKit', '~> 5.17.0'
   pod 'ThingSmartBusinessExtensionKit', '~> 5.17.0'
   
-  #################
-  # Optional SDK
-  #################
-  
+  # [Optional] Bluetooth
   pod 'ThingSmartBusinessExtensionKitBLEExtra','~> 5.17.0'
+  
+  # [Optional] Matter
   pod 'ThingSmartMatterKit', '~> 5.17.0'
   pod 'ThingSmartMatterExtensionKit', '~> 5.17.0'
   pod 'ThingSmartBusinessExtensionKitMatterExtra','~> 5.17.0'
-  pod 'ThingSmartAppleDeviceKit', '~> 5.2.0'
+  
+  # [Optional] HomeKit Device
+  pod 'ThingSmartAppleDeviceKit', '~> 5.17.0'
+  
+  # [Optional] Special category
   pod 'ThingSmartCameraKit', '~> 5.17.0'
   pod 'ThingSmartOutdoorKit', '~> 5.17.0'
   pod 'ThingSmartSweeperKit', '~> 5.0.0'
