@@ -9,10 +9,13 @@
 #import "Alert.h"
 #import <ThingSmartBizCore/ThingSmartBizCore.h>
 #import <ThingModuleServices/ThingModuleServices.h>
-//#import <ThingSmartCameraKit/ThingSmartCameraKit.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "DemoCameraVASRouteDispatcher.h"
 
 @interface DeviceListTableViewController () <ThingSmartHomeDelegate>
 @property (strong, nonatomic) ThingSmartHome *home;
+@property (strong, nonatomic) DemoCameraVASRouteDispatcher *VASRouteDispatcher;
+
 @end
 
 @implementation DeviceListTableViewController
@@ -88,6 +91,8 @@
         [self deviceGotoCameraMessageCenterPanel:deviceModel];
     } else if (self.deviceListType == DeviceListTypeCameraPhotoLibraryPanel) {
         [self deviceGotoPhotoLibrary:deviceModel];
+    } else if (self.deviceListType == DeviceListTypeCameraVAS) {
+        [self deviceGotoCameraVAS:deviceModel categoryCode:ThingCameraVASCategoryCodeCloud];
     }
 }
 
@@ -165,6 +170,16 @@
     [impl deviceGotoPhotoLibrary:deviceModel];
 }
 
+- (void)deviceGotoCameraVAS:(ThingSmartDeviceModel *)deviceModel categoryCode:(ThingCameraVASCategoryCode)categoryCode {
+    [SVProgressHUD showWithStatus:@""];
+    [self.VASRouteDispatcher openCameraVASPageWithDeviceModel:deviceModel categoryCode:categoryCode completion:^(NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
+        if (error) {
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        }
+    }];
+}
+
 - (void)showIsNotIpcAlert {
     [Alert showBasicAlertOnVC:self withTitle:@"" message:NSLocalizedString(@"This is not a IPC device", @"")];
 }
@@ -188,4 +203,13 @@
 -(void)home:(ThingSmartHome *)home device:(ThingSmartDeviceModel *)device dpsUpdate:(NSDictionary *)dps {
     [self.tableView reloadData];
 }
+
+
+- (DemoCameraVASRouteDispatcher *)VASRouteDispatcher {
+    if (!_VASRouteDispatcher) {
+        _VASRouteDispatcher = [[DemoCameraVASRouteDispatcher alloc] init];
+    }
+    return _VASRouteDispatcher;
+}
+
 @end

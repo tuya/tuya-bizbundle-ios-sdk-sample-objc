@@ -16,8 +16,8 @@ typedef NS_ENUM(NSInteger, DeviceListType) {
     DeviceListTypeCameraPlayBackPanel,
     DeviceListTypeCameraCloudStoragePanel,
     DeviceListTypeCameraMessageCenterPanel,
-    DeviceListTypeCameraPhotoLibraryPanel
-    
+    DeviceListTypeCameraPhotoLibraryPanel,
+    DeviceListTypeCameraVAS
 };
 
 @interface DeviceListTableViewController : UITableViewController

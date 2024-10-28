@@ -7,3 +7,6 @@
 //
 
 #import <ThingValueAddedServicePlugAPI/ThingValueAddedServicePlugAPI.h>
+#import <ThingSmartActivatorDiscoveryManager/ThingSmartActivatorDiscoveryManager.h>
+#import <ThingSmartBizCore/ThingSmartBizCore.h>
+#import <ThingModuleServices/ThingActivatorProtocol.h>

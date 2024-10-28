@@ -10,52 +10,107 @@ inhibit_all_warnings!
 
 target 'tuya-bizbundle-ios-sample-objc_Example' do
   pod 'SVProgressHUD'
-  pod 'ThingSmartHomeKit', '~> 5.14.0'
-  pod 'ThingSmartActivatorBizBundle', '~> 5.14.0'
-  pod 'ThingSmartCameraPanelBizBundle', '~> 5.14.0'
-  pod 'ThingSmartCameraRNPanelBizBundle', '~> 5.14.0'
-  pod 'ThingSmartCameraSettingBizBundle', '~> 5.14.0'
-  pod 'ThingSmartCloudServiceBizBundle', '~> 5.14.0'
-  pod 'ThingSmartDeviceDetailBizBundle', '~> 5.14.0'
+  pod 'SnapKit'
 
-  # Family
-  pod 'ThingSmartFamilyBizBundle', '~> 5.14.0'
+  #################
+  # Commonly Used
+  #################
   
-  # Help
-  pod 'ThingSmartHelpCenterBizBundle', '~> 5.14.0'
-
-  # Message Center
-  pod 'ThingSmartMessageBizBundle', '~> 5.14.0'
-
-  # Required for WeChat sharing (optional)
-  # pod 'ThingSocialWeChat', '~> 5.14.0.0'
-  # Required for QQ sharing (optional)
-  # pod 'ThingSocialQQ', '~> 5.14.0.0'
-  # Social Sharing Business Bundle
-  pod 'ThingSmartShareBizBundle', '~> 5.14.0'
-
-  # pod 'ThingSmartOTABizBundle'
-  # pod 'ThingSmartPanelBizBundle'
-  # pod 'ThingSmartSceneBizBundle'
-  # pod 'ThingSmartSkillQuickBindBizBundle'
-  # pod 'ThingSmartLightSceneBizBundle'
-  
+  # Secret key
   # Build and obtain ThingSmartCryption from iot.tuya.com
   # After purchasing the official version, you need to rebuild the SDK on the IoT platform and reintegrate it
   # ./ represents the directory where `ios_core_sdk.tar.gz` is extracted to the same level as the `podfile`
   # If you store it in a custom directory, you can modify `path` to the custom directory level
   pod 'ThingSmartCryption', :path => './ios_core_sdk'
-  # Mini Program Business Bundle
-  pod "ThingSmartMiniAppBizBundle", '~> 5.14.0'
-  pod 'ThingSmartBaseKitBizBundle', '~> 5.14.0'
-  pod 'ThingSmartBizKitBizBundle', '~> 5.14.0'
-  pod 'ThingSmartDeviceKitBizBundle', '~> 5.14.0'
   
-  # Marketing BizBundle
-  pod 'ThingSmartMarketingBizBundle', '~> 5.14.0'
-  pod 'ThingSmartMallBizBundle', '~> 5.14.0'
-  pod 'ThingSmartThemeManagerBizBundle', '~> 5.14.0'
+  # Family
+  pod 'ThingSmartFamilyBizBundle', '~> 5.17.0'
+  
+  # Device pairing
+  pod 'ThingSmartActivatorBizBundle', '~> 5.17.0'
+  
+  # Device Panel (RN)
+  pod 'ThingSmartPanelBizBundle', '~> 5.17.0'
+  
+  # Device Panel (Mini Program)
+  pod "ThingSmartMiniAppBizBundle", '~> 5.17.0'
+  pod 'ThingSmartBaseKitBizBundle', '~> 5.17.0'
+  pod 'ThingSmartBizKitBizBundle', '~> 5.17.0'
+  pod 'ThingSmartDeviceKitBizBundle', '~> 5.17.0'
+  
+  # Device detail
+  pod 'ThingSmartDeviceDetailBizBundle', '~> 5.17.0'
+  
+  # Device OTA
+  pod 'ThingSmartOTABizBundle', '~> 5.17.0'
+  
+  # Scene
+  pod 'ThingSmartSceneBizBundle', '~> 5.17.0'
+  
+  # Message Center
+  pod 'ThingSmartMessageBizBundle', '~> 5.17.0'
+  
+  # Camera
+  pod 'ThingSmartCameraPanelBizBundle', '~> 5.17.0'
+  pod 'ThingSmartCameraRNPanelBizBundle', '~> 5.17.0'
+  pod 'ThingSmartCameraSettingBizBundle', '~> 5.17.0'
+  pod 'ThingSmartCloudServiceBizBundle', '~> 5.17.0'
+  
+  # Help
+  pod 'ThingSmartHelpCenterBizBundle', '~> 5.17.0'
 
+  # Theme
+  pod 'ThingSmartThemeManagerBizBundle', '~> 5.17.0'
+  
+  
+  #################
+  # Advanced Used
+  #################
+
+  # Voice Skill
+  pod 'ThingSmartSkillQuickBindBizBundle', '~> 5.17.0'
+  
+  # Light Secene
+  pod 'ThingSmartLightSceneBizBundle', '~> 5.17.0'
+
+  # Marketing
+  pod 'ThingSmartMarketingBizBundle', '~> 5.17.0'
+  
+  # Mall
+  pod 'ThingSmartMallBizBundle', '~> 5.17.0'
+  
+  # Value-added services
+  pod 'ThingAdvancedFunctionsBizBundle', '~> 5.17.0'
+
+  # Required for WeChat sharing (optional)
+  # pod 'ThingSocialWeChat', '~> 5.17.0.0'
+  # Required for QQ sharing (optional)
+  # pod 'ThingSocialQQ', '~> 5.17.0.0'
+  # Social Sharing Business Bundle
+  pod 'ThingSmartShareBizBundle', '~> 5.17.0'
+  
+  
+  #################
+  # Required SDK
+  #################
+  
+  pod 'ThingSmartHomeKit', '~> 5.17.0'
+  pod 'ThingSmartBusinessExtensionKit', '~> 5.17.0'
+  
+  #################
+  # Optional SDK
+  #################
+  
+  pod 'ThingSmartBusinessExtensionKitBLEExtra','~> 5.17.0'
+  pod 'ThingSmartMatterKit', '~> 5.17.0'
+  pod 'ThingSmartMatterExtensionKit', '~> 5.17.0'
+  pod 'ThingSmartBusinessExtensionKitMatterExtra','~> 5.17.0'
+  pod 'ThingSmartAppleDeviceKit', '~> 5.2.0'
+  pod 'ThingSmartCameraKit', '~> 5.17.0'
+  pod 'ThingSmartOutdoorKit', '~> 5.17.0'
+  pod 'ThingSmartSweeperKit', '~> 5.0.0'
+  pod 'ThingSmartLockKit', '~> 5.5.0'
+  
 end
 
 post_install do |installer|

@@ -33,6 +33,9 @@
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
+		937ED5E22CCB6AC400B7237B /* DemoCameraVASRouteDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 937ED5E12CCB6AC400B7237B /* DemoCameraVASRouteDispatcher.m */; };
+		98E6C9042CC0B39A00EA525D /* CustomActivatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6C9032CC0B39A00EA525D /* CustomActivatorViewController.swift */; };
+		98E6C9062CC0BF7700EA525D /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 98E6C9052CC0BF7700EA525D /* camera.png */; };
 		AFA3294225D0E33C0065E54E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA3293725D0E3220065E54E /* main.m */; };
 		AFA329BD25D0E3500065E54E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA3294525D0E34F0065E54E /* AppDelegate.m */; };
 		AFA329CD25D0E3500065E54E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA3296825D0E3500065E54E /* LaunchScreen.storyboard */; };
@@ -44,7 +47,7 @@
 		AFA329F225D0E3500065E54E /* NotificationName.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA329B925D0E3500065E54E /* NotificationName.m */; };
 		AFA329F325D0E3500065E54E /* UIButton+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA329BA25D0E3500065E54E /* UIButton+Extensions.m */; };
 		AFA32A1225D0EBAB0065E54E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFA32A1025D0EBAB0065E54E /* Localizable.strings */; };
-		C6195267C7AF41082E0AF0E7 /* Pods_tuya_bizbundle_ios_sample_objc_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF639D7E722129DAA3642C98 /* Pods_tuya_bizbundle_ios_sample_objc_Example.framework */; };
+		C5066C91057616F7F253DD31 /* Pods_tuya_bizbundle_ios_sample_objc_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2EA25261BB59C2C5E9D99D /* Pods_tuya_bizbundle_ios_sample_objc_Example.framework */; };
 		E597051F28BE703200A5C43F /* LightSceneList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E597052128BE703200A5C43F /* LightSceneList.storyboard */; };
 		E5C146B628BCC7E1005B20A2 /* LightSceneListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C146B528BCC7E1005B20A2 /* LightSceneListTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -116,7 +119,12 @@
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7400F86921BAC846FC19FA27 /* libPods-tuya-bizbundle-ios-sample-objc_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tuya-bizbundle-ios-sample-objc_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		937ED5E02CCB6AC400B7237B /* DemoCameraVASRouteDispatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoCameraVASRouteDispatcher.h; sourceTree = "<group>"; };
+		937ED5E12CCB6AC400B7237B /* DemoCameraVASRouteDispatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoCameraVASRouteDispatcher.m; sourceTree = "<group>"; };
+		98E6C9032CC0B39A00EA525D /* CustomActivatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActivatorViewController.swift; sourceTree = "<group>"; };
+		98E6C9052CC0BF7700EA525D /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = Images.xcassets/camera.png; sourceTree = "<group>"; };
 		A6259BD4A2619B71D99573EE /* tuya-bizbundle-ios-sample-objc.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "tuya-bizbundle-ios-sample-objc.podspec"; path = "../tuya-bizbundle-ios-sample-objc.podspec"; sourceTree = "<group>"; };
+		AA2EA25261BB59C2C5E9D99D /* Pods_tuya_bizbundle_ios_sample_objc_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tuya_bizbundle_ios_sample_objc_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC153C7CD61F4FA79F8DF9EC /* Pods-tuya-bizbundle-ios-sample-objc_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tuya-bizbundle-ios-sample-objc_Example.release.xcconfig"; path = "Target Support Files/Pods-tuya-bizbundle-ios-sample-objc_Example/Pods-tuya-bizbundle-ios-sample-objc_Example.release.xcconfig"; sourceTree = "<group>"; };
 		AFA3293725D0E3220065E54E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AFA3294525D0E34F0065E54E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -140,7 +148,6 @@
 		AFA329FF25D0E40C0065E54E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Login.strings"; sourceTree = "<group>"; };
 		AFA32A1125D0EBAB0065E54E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		AFA32A1725D0ED1E0065E54E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		DF639D7E722129DAA3642C98 /* Pods_tuya_bizbundle_ios_sample_objc_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tuya_bizbundle_ios_sample_objc_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E597052028BE703200A5C43F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LightSceneList.storyboard; sourceTree = "<group>"; };
 		E597052328BE703500A5C43F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "../zh-Hans.lproj/LightSceneList.strings"; sourceTree = "<group>"; };
 		E5C146B428BCC7E0005B20A2 /* LightSceneListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightSceneListTableViewController.h; sourceTree = "<group>"; };
@@ -163,7 +170,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				C6195267C7AF41082E0AF0E7 /* Pods_tuya_bizbundle_ios_sample_objc_Example.framework in Frameworks */,
+				C5066C91057616F7F253DD31 /* Pods_tuya_bizbundle_ios_sample_objc_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +278,7 @@
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
 				7400F86921BAC846FC19FA27 /* libPods-tuya-bizbundle-ios-sample-objc_Tests.a */,
-				DF639D7E722129DAA3642C98 /* Pods_tuya_bizbundle_ios_sample_objc_Example.framework */,
+				AA2EA25261BB59C2C5E9D99D /* Pods_tuya_bizbundle_ios_sample_objc_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -279,6 +286,7 @@
 		6003F593195388D20070C39A /* Example for tuya-bizbundle-ios-sample-objc */ = {
 			isa = PBXGroup;
 			children = (
+				98E6C9052CC0BF7700EA525D /* camera.png */,
 				42C974D42C621996004561C4 /* ThingValueAddedServicePlugAPIProtocolImpl.swift */,
 				42C974D62C62199E004561C4 /* tuya-bizbundle-ios-sample-objc_Example-Bridging-Header.h */,
 				AFA3294725D0E34F0065E54E /* AppDelegate.h */,
@@ -322,6 +330,31 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		937ED5DD2CCB4C2200B7237B /* Value-added services */ = {
+			isa = PBXGroup;
+			children = (
+				937ED5E02CCB6AC400B7237B /* DemoCameraVASRouteDispatcher.h */,
+				937ED5E12CCB6AC400B7237B /* DemoCameraVASRouteDispatcher.m */,
+			);
+			path = "Value-added services";
+			sourceTree = "<group>";
+		};
+		937ED5DE2CCB4C2200B7237B /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				937ED5DD2CCB4C2200B7237B /* Value-added services */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		98E6C9022CC0B39A00EA525D /* Activator */ = {
+			isa = PBXGroup;
+			children = (
+				98E6C9032CC0B39A00EA525D /* CustomActivatorViewController.swift */,
+			);
+			path = Activator;
+			sourceTree = "<group>";
+		};
 		AFA3294F25D0E34F0065E54E /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +374,8 @@
 		AFA3298025D0E3500065E54E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				937ED5DE2CCB4C2200B7237B /* Camera */,
+				98E6C9022CC0B39A00EA525D /* Activator */,
 				05B7720C2C461C2200B6CB2C /* ThemeManagerViewController.h */,
 				05B7720B2C461C2200B6CB2C /* ThemeManagerViewController.m */,
 				473CFFB52BB6CE080068AB44 /* Marketing */,
@@ -492,6 +527,7 @@
 				AFA329D425D0E3500065E54E /* Login.storyboard in Resources */,
 				34D5CA0625EF967500C22B14 /* DeviceList.storyboard in Resources */,
 				AFA329CD25D0E3500065E54E /* LaunchScreen.storyboard in Resources */,
+				98E6C9062CC0BF7700EA525D /* camera.png in Resources */,
 				344EB67425F6132E00C115E2 /* SceneList.storyboard in Resources */,
 				34D5CA1C25F0C14900C22B14 /* configList.json in Resources */,
 				344EB66425F5FBF800C115E2 /* SwitchHome.storyboard in Resources */,
@@ -536,12 +572,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-tuya-bizbundle-ios-sample-objc_Example/Pods-tuya-bizbundle-ios-sample-objc_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/DoubleConversion/DoubleConversion.framework",
 				"${BUILT_PRODUCTS_DIR}/EZAudio/EZAudio.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
-				"${BUILT_PRODUCTS_DIR}/Folly/folly.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -549,8 +586,10 @@
 				"${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
 				"${BUILT_PRODUCTS_DIR}/TPCircularBuffer/TPCircularBuffer.framework",
+				"${PODS_ROOT}/ThingSmartMatterKit/Build/VendorsFramework/ThingMatterSupport.framework",
 				"${BUILT_PRODUCTS_DIR}/UICKeyChainStore/UICKeyChainStore.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/glog/glog.framework",
@@ -571,12 +610,13 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DACircularProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoubleConversion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZAudio.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/folly.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
@@ -584,8 +624,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLCipher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPCircularBuffer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ThingMatterSupport.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICKeyChainStore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
@@ -647,10 +689,12 @@
 				"${PODS_ROOT}/GZLMiniAppCore_iOS/Build/GZLMiniAppCore_iOS.xcframework/ios-arm64/GZLMiniAppCore_iOS.framework/CustomResources/Bundles/GZLMiniAppCore_iOS.bundle",
 				"${PODS_ROOT}/GZLMiniAppInject/Build/GZLMiniAppInject.xcframework/ios-arm64/GZLMiniAppInject.framework/CustomResources/Assets/gzl_clear_cache.png",
 				"${PODS_ROOT}/GZLMiniAppRemoteIDE/Build/GZLMiniAppRemoteIDE.xcframework/ios-arm64/GZLMiniAppRemoteIDE.framework/CustomResources/Assets/dom.js",
-				"${PODS_ROOT}/GZLMiniAppStorage/Build/GZLMiniAppStorage.xcframework/ios-arm64_armv7/GZLMiniAppStorage.framework/CustomResources/Bundles/GZLMiniAppStorage.bundle",
+				"${PODS_ROOT}/GZLMiniAppStorage/Build/GZLMiniAppStorage.xcframework/ios-arm64/GZLMiniAppStorage.framework/CustomResources/Bundles/GZLMiniAppStorage.bundle",
 				"${PODS_ROOT}/GZLMiniAppTab_iOS/Build/GZLMiniAppTab_iOS.xcframework/ios-arm64/GZLMiniAppTab_iOS.framework/CustomResources/Bundles/GZLMiniAppTab_iOS.bundle",
 				"${PODS_ROOT}/GZLMiniAppWebView_iOS/Build/GZLMiniAppWebView_iOS.xcframework/ios-arm64/GZLMiniAppWebView_iOS.framework/CustomResources/Assets/gzl_web_load.js",
 				"${PODS_ROOT}/GZLMiniProgramAdapterImpl_iOS/Build/GZLMiniProgramAdapterImpl_iOS.xcframework/ios-arm64/GZLMiniProgramAdapterImpl_iOS.framework/CustomResources/Bundles/GZLMiniProgramAdapterImpl_iOS.bundle",
+				"${PODS_ROOT}/GZLRNCompat/GZLRNCompat/Assets/gzl_bridge_service.js",
+				"${PODS_ROOT}/GZLRNCompat/GZLRNCompat/Assets/rn_local_main.bundle",
 				"${PODS_ROOT}/GodzillaMiniWidgetKit/Build/GodzillaMiniWidgetKit.xcframework/ios-arm64/GodzillaMiniWidgetKit.framework/CustomResources/Bundles/GodzillaMiniWidgetKit.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TRCTKit/TRCTKit.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TRCTLaserMap/TRCTLaserMap.bundle",
@@ -671,6 +715,7 @@
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIBizKit/TUNIBizKit.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIBluetoothManager/TUNIBluetoothManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNICloudStorageSignatureManager/TUNICloudStorageSignatureManager.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/TUNICommonMediaManager/TUNICommonMediaManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNICompassManager/TUNICompassManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNICountrySelectManager/TUNICountrySelectManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIDLIPCManager/TUNIDLIPCManager.bundle",
@@ -697,6 +742,7 @@
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIIPCCameraSettingsManager/TUNIIPCCameraSettingsManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIIPCDoorbellManager/TUNIIPCDoorbellManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIIPCKit/TUNIIPCKit.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIImageEncryptUploadManager/TUNIImageEncryptUploadManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIImageNetworkManager/TUNIImageNetworkManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIImagePickerManager/TUNIImagePickerManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIInteractionManager/TUNIInteractionManager.bundle",
@@ -722,6 +768,7 @@
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIOpenPageManager/TUNIOpenPageManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIPayManager/TUNIPayManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIPhoneBluetoothManager/TUNIPhoneBluetoothManager.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIPhoneManager/TUNIPhoneManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIPhoneNetworkManager/TUNIPhoneNetworkManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIRecordingManager/TUNIRecordingManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TUNIRouterManager/TUNIRouterManager.bundle",
@@ -765,6 +812,7 @@
 				"${PODS_ROOT}/ThingAIFaceModule/ThingAIFaceModule/Assets/thing_aiface_unselected@3x.png",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingAVSKit/ThingAVSKit.bundle",
 				"${PODS_ROOT}/ThingActivatorModule/ThingActivatorModule/Assets/Activator.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/ThingAdvancedFunctionsBizBundle/ThingAdvancedFunctionsBizBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingAlertView/ThingAlertView.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingAvatarEditKit/ThingCropViewControllerBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingCallCenterControlTactic/ThingCallCenterControlTactic.bundle",
@@ -884,6 +932,9 @@
 				"${PODS_ROOT}/ThingIntentKit/ThingIntentKit/Assets/zh-Hant.lproj",
 				"${PODS_ROOT}/ThingIntentKit/ThingIntentKit/Assets/zh-HK.lproj",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingJailbreakDetectModule/ThingJailbreakDetectModule.bundle",
+				"${PODS_ROOT}/ThingLightCommonUI/ThingLightCommonUI/Assets/ThingLightCommonUIRes.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/ThingLightCommonUI/ThingLightCommonUI.bundle",
+				"${PODS_ROOT}/ThingLightSceneBizBundle/ThingLightSceneBizBundle/Assets/ThingLightSceneBizBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingMapKit/ThingMapKit.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingMediaKit/ThingMediaKit.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingMessageCenterModule/ThingMessageCenterModule.bundle",
@@ -891,6 +942,7 @@
 				"${PODS_ROOT}/ThingNavigationController/ThingNavigationController/Assets/ThingNavigationRes.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingNetPoolModule/ThingNetPoolModule.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingOTAGeneralModule/ThingOTAGeneralModule.bundle",
+				"${PODS_ROOT}/ThingOpenSSLSDK/Build/ThingOpenSSLSDK.xcframework/ios-arm64/ThingOpenSSLSDK.framework/BoringSSL_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingPanelContainer/ThingPanelContainer.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingPanelContext/ThingPanelContext.bundle",
 				"${PODS_ROOT}/ThingPanelModule/ThingPanelModule/Assets/H5/thing_item_selected@2x.png",
@@ -924,6 +976,8 @@
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingRealClass/ThingOBC.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingReleaseDebugger/ReleaseDebugger.bundle",
 				"${PODS_ROOT}/ThingRoomManagerDefaultUISkin/ThingRoomManagerDefaultUISkin/Assets/ThingRoomManagerDefaultUISkin.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSceneFeatureExtModule/ThingSceneFeatureExtModule.bundle",
+				"${PODS_ROOT}/ThingSettingsModule/ThingSettingsModule/Assets/ThingSettingsModule.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSiriShortcutModule/ThingSiriShortcutModule.bundle",
 				"${PODS_ROOT}/ThingSmartActionDialog/ThingSmartActionDialog/Assets/ThingSmartActionDialog.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartActivatorBizBundle/ThingSmartActivatorBizBundle.bundle",
@@ -933,10 +987,12 @@
 				"${PODS_ROOT}/ThingSmartBizCore/ThingSmartBizCore/Assets/ThingSmartBizCore.bundle/i18n_escape.json",
 				"${PODS_ROOT}/ThingSmartBizCore/ThingSmartBizCore/Assets/ThingSmartBizCore.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartBizKitBizBundle/ThingSmartBizKitBizBundle.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartBusinessExtensionKit/ThingSmartBusinessExtensionKit.bundle",
 				"${PODS_ROOT}/ThingSmartBusinessLibrary/ThingSmartBusinessLibrary/Assets/cell_view_arrow@2x.png",
 				"${PODS_ROOT}/ThingSmartBusinessLibrary/ThingSmartBusinessLibrary/Assets/cell_view_arrow@3x.png",
 				"${PODS_ROOT}/ThingSmartBusinessLibrary/ThingSmartBusinessLibrary/Assets/ThingSmartBusinessLibraryRes.bundle",
 				"${PODS_ROOT}/ThingSmartBusinessLibrary/ThingSmartBusinessLibrary/Assets/TPViews.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartBusinessMaskModule/ThingSmartBusinessMask.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartCameraPanelBizBundle/ThingSmartCameraPanelBizBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartCameraRNPanelBizBundle/ThingSmartCameraRNPanelBizBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartCameraSettingBizBundle/ThingSmartCameraSettingBizBundle.bundle",
@@ -953,12 +1009,16 @@
 				"${PODS_ROOT}/ThingSmartHouse/ThingSmartHouse/Assets/ThingDeviceListModule.bundle",
 				"${PODS_ROOT}/ThingSmartHouse/ThingSmartHouse/Assets/ThingSmartHouse.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartHouse/ThingSmartHouseUISkin.bundle",
+				"${PODS_ROOT}/ThingSmartHouseBizKit/ThingSmartHouseBizKit/Assets/ThingSmartHouseBizKit.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartIPCKitBizBundle/ThingSmartIPCKitBizBundle.bundle",
 				"${PODS_ROOT}/ThingSmartIntelligenceModule/ThingSmartIntelligenceModule/Assets/ThingSmartIntelligenceModule.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartLightSceneBizBundle/ThingSmartLightSceneBizBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartMallBizBundle/ThingSmartMallBizBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartMapKitBizBundle/ThingSmartMapKitBizBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartMarketingBizBundle/ThingSmartMarketingBizBundle.bundle",
 				"${PODS_ROOT}/ThingSmartMarketingModule/ThingSmartMarketingModule/Assets/ThingSmartMarketing.bundle",
+				"${PODS_ROOT}/ThingSmartMatterKit/Build/ThingSmartMatterKit.xcframework/ios-arm64/ThingSmartMatterKit.framework/CustomResources/Assets/paa1.pem",
+				"${PODS_ROOT}/ThingSmartMatterKit/Build/ThingSmartMatterKit.xcframework/ios-arm64/ThingSmartMatterKit.framework/CustomResources/Assets/paa_cert.pem",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartMessageBizBundle/ThingSmartMessageBizBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartMiniAppBizBundle/ThingSmartMiniAppBizBundle.bundle",
 				"${PODS_ROOT}/ThingSmartNetworkKit/Build/ThingSmartNetworkKit.xcframework/ios-arm64/ThingSmartNetworkKit.framework/CustomResources/Assets/cerficate_h2_local",
@@ -966,15 +1026,18 @@
 				"${PODS_ROOT}/ThingSmartNetworkKit/Build/ThingSmartNetworkKit.xcframework/ios-arm64/ThingSmartNetworkKit.framework/CustomResources/Assets/cerficate_v3",
 				"${PODS_ROOT}/ThingSmartNetworkKit/Build/ThingSmartNetworkKit.xcframework/ios-arm64/ThingSmartNetworkKit.framework/CustomResources/Assets/h2.ca.der",
 				"${PODS_ROOT}/ThingSmartNetworkKit/Build/ThingSmartNetworkKit.xcframework/ios-arm64/ThingSmartNetworkKit.framework/CustomResources/Assets/thingdomain_v1.thingcfg",
+				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartOTABizBundle/ThingSmartOTABizBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartPanelBizBundle/ThingSmartPanelBizBundle.bundle",
 				"${PODS_ROOT}/ThingSmartPushConfirmModule/ThingSmartPushConfirmModule/Assets/thingdoorbell.caf",
 				"${PODS_ROOT}/ThingSmartPushConfirmModule/ThingSmartPushConfirmModule/Assets/thingwarnbell.caf",
 				"${PODS_ROOT}/ThingSmartPushConfirmModule/ThingSmartPushConfirmModule/Assets/thingwarning.caf",
 				"${PODS_ROOT}/ThingSmartPushConfirmModule/ThingSmartPushConfirmModule/Assets/thingwarning_short.caf",
 				"${PODS_ROOT}/ThingSmartPushNotificationModule/ThingSmartPushNotificationModule/Assets/ThingSmartPushNotificationModuleRes.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartSceneBizBundle/ThingSmartSceneBizBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartSceneDefaultUISkin/ThingSmartSceneDefaultUISkin.bundle",
 				"${PODS_ROOT}/ThingSmartSceneModule/ThingSmartSceneModule/Assets/ThingSmartSceneModule.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartShareBizBundle/ThingSmartShareBizBundle.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartSkillQuickBindBizBundle/ThingSmartSkillQuickBindBizBundle.bundle",
 				"${PODS_ROOT}/ThingSmartSpeechModule/ThingSmartSpeechModule/Assets/speechResource.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ThingSmartThemeManagerBizBundle/ThingSmartThemeManagerBizBundle.bundle",
 				"${PODS_ROOT}/ThingSmartUtil/Build/ThingSmartUtil.xcframework/ios-arm64/ThingSmartUtil.framework/CustomResources/Bundles/ThingSmartUtil.bundle",
@@ -1030,6 +1093,8 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GZLMiniAppTab_iOS.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gzl_web_load.js",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GZLMiniProgramAdapterImpl_iOS.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gzl_bridge_service.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/rn_local_main.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GodzillaMiniWidgetKit.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TRCTKit.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TRCTLaserMap.bundle",
@@ -1050,6 +1115,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIBizKit.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIBluetoothManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNICloudStorageSignatureManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNICommonMediaManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNICompassManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNICountrySelectManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIDLIPCManager.bundle",
@@ -1076,6 +1142,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIIPCCameraSettingsManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIIPCDoorbellManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIIPCKit.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIImageEncryptUploadManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIImageNetworkManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIImagePickerManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIInteractionManager.bundle",
@@ -1101,6 +1168,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIOpenPageManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIPayManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIPhoneBluetoothManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIPhoneManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIPhoneNetworkManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIRecordingManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TUNIRouterManager.bundle",
@@ -1144,6 +1212,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/thing_aiface_unselected@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingAVSKit.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Activator.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingAdvancedFunctionsBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingAlertView.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingCropViewControllerBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingCallCenterControlTactic.bundle",
@@ -1263,6 +1332,9 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hant.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-HK.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingJailbreakDetectModule.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingLightCommonUIRes.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingLightCommonUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingLightSceneBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingMapKit.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingMediaKit.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingMessageCenterModule.bundle",
@@ -1270,6 +1342,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingNavigationRes.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingNetPoolModule.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingOTAGeneralModule.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BoringSSL_privacy.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingPanelContainer.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingPanelContext.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/thing_item_selected@2x.png",
@@ -1303,6 +1376,8 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingOBC.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ReleaseDebugger.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingRoomManagerDefaultUISkin.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSceneFeatureExtModule.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSettingsModule.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSiriShortcutModule.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartActionDialog.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartActivatorBizBundle.bundle",
@@ -1312,10 +1387,12 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/i18n_escape.json",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartBizCore.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartBizKitBizBundle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartBusinessExtensionKit.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cell_view_arrow@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cell_view_arrow@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartBusinessLibraryRes.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TPViews.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartBusinessMask.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartCameraPanelBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartCameraRNPanelBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartCameraSettingBizBundle.bundle",
@@ -1332,12 +1409,16 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingDeviceListModule.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartHouse.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartHouseUISkin.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartHouseBizKit.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartIPCKitBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartIntelligenceModule.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartLightSceneBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartMallBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartMapKitBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartMarketingBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartMarketing.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/paa1.pem",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/paa_cert.pem",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartMessageBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartMiniAppBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cerficate_h2_local",
@@ -1345,15 +1426,18 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cerficate_v3",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/h2.ca.der",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/thingdomain_v1.thingcfg",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartOTABizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartPanelBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/thingdoorbell.caf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/thingwarnbell.caf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/thingwarning.caf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/thingwarning_short.caf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartPushNotificationModuleRes.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartSceneBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartSceneDefaultUISkin.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartSceneModule.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartShareBizBundle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartSkillQuickBindBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/speechResource.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartThemeManagerBizBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ThingSmartUtil.bundle",
@@ -1389,6 +1473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				937ED5E22CCB6AC400B7237B /* DemoCameraVASRouteDispatcher.m in Sources */,
 				34D5CA1525EFBA5B00C22B14 /* Home.m in Sources */,
 				34D5C90B25EF68A900C22B14 /* ResetPasswordTableViewController.m in Sources */,
 				34D5CA0F25EFB8A800C22B14 /* DeviceListTableViewController.m in Sources */,
@@ -1403,6 +1488,7 @@
 				AFA329F125D0E3500065E54E /* Alert.m in Sources */,
 				AFA329EF25D0E3500065E54E /* MainViewController.m in Sources */,
 				34D5CA3025F20CDE00C22B14 /* SceneListTableViewController.m in Sources */,
+				98E6C9042CC0B39A00EA525D /* CustomActivatorViewController.swift in Sources */,
 				AFA329F325D0E3500065E54E /* UIButton+Extensions.m in Sources */,
 				47909D3A2BF2234A00E31061 /* SceneDelegate.m in Sources */,
 				34D5C90C25EF68A900C22B14 /* LoginTableViewController.m in Sources */,

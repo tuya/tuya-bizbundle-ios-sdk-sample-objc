@@ -15,7 +15,6 @@
 #import <ThingSmartMiniAppBizBundle/ThingSmartMiniAppBizBundle.h>
 #import "DemoBaseTableViewController.h"
 #import "ThemeManagerViewController.h"
-#import <ThingValueAddedServicePlugAPI/ThingValueAddedServicePlugAPI.h>
 #import "tuya_bizbundle_ios_sample_objc_Example-Swift.h"
 
 @interface MainTableViewController () <ThingSmartHomeManagerDelegate>
@@ -59,7 +58,7 @@
 - (void)setupActionMapping {
     self.actionMapping = @[
         @[ACTION(@selector(gotoFamilyManagement)), ACTION_NULL, ACTION(@selector(logoutTapped:))],
-        @[ACTION(@selector(gotoCategoryViewController))],
+        @[ACTION(@selector(gotoCategoryViewController)),ACTION(@selector(gotoProductActivatorViewController))],
         @[ACTION_NULL],
         @[ACTION_NULL],
         @[ACTION_NULL],
@@ -155,6 +154,10 @@
     }];
 }
 
+- (void)gotoProductActivatorViewController {
+    CustomActivatorViewController *vc = [[CustomActivatorViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (void)gotoAddScene {
     id<ThingSmartSceneProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingSmartSceneProtocol)];
     [impl addAutoScene:^(ThingSmartSceneModel *secneModel, BOOL addSuccess) {
@@ -267,6 +270,9 @@
     
     if ([segue.identifier isEqualToString:@"show-camera-photo-library-panel"] && [segue.destinationViewController isKindOfClass:[DeviceListTableViewController class]]) {
         ((DeviceListTableViewController*)(segue.destinationViewController)).deviceListType = DeviceListTypeCameraPhotoLibraryPanel;
+    }
+    if ([segue.identifier isEqualToString:@"show-camera-vas-page"] && [segue.destinationViewController isKindOfClass:[DeviceListTableViewController class]]) {
+        ((DeviceListTableViewController*)(segue.destinationViewController)).deviceListType = DeviceListTypeCameraVAS;
     }
 }
 
