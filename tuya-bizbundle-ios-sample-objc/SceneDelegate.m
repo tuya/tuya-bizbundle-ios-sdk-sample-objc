@@ -7,7 +7,7 @@
 
 #import "SceneDelegate.h"
 #import <ThingSmartBizCore/ThingSmartBizCore.h>
-
+#import <ThingModuleServices/ThingThemeManagerProtocol.h>
 @interface SceneDelegate ()
 
 @end
@@ -16,7 +16,6 @@
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
     
     self.window = [[UIWindow alloc] initWithWindowScene:scene];
-    self.window.backgroundColor = [UIColor whiteColor];
     self.window.frame = [[UIScreen mainScreen] bounds];
     
     if ([ThingSmartUser sharedInstance].isLogin) {
@@ -29,6 +28,13 @@
         self.window.rootViewController = nav;
     }
     [self.window makeKeyAndVisible];
+    
+    // Set to dark mode
+    if (@available(iOS 13.0, *)) {
+        id<ThingThemeManagerProtocol> theme = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingThemeManagerProtocol)];
+        [theme changeThemeStyle:UIUserInterfaceStyleDark];
+    }
+    
 }
 
 
@@ -63,6 +69,5 @@
     // Use this method to save data, release shared resources, and store enough scene-specific state information
     // to restore the scene back to its current state.
 }
-
 
 @end
