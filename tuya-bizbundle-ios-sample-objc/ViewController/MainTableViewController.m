@@ -68,6 +68,7 @@
         @[ACTION(@selector(gotoHelpCenter))],
         @[ACTION(@selector(requestMallPage))],
         @[ACTION_NULL],
+        @[ACTION_NULL],
         
         @[ACTION(@selector(gotoAmazonAlexa))],
         @[ACTION(@selector(gotoAddLightScene))],
@@ -75,7 +76,9 @@
         @[ACTION(@selector(gotoMiniApp))],
         
         @[ACTION_NULL],
+        
         @[ACTION(@selector(gotoThemeManager))],
+        @[ACTION(@selector(gotoBuyPhone)), ACTION(@selector(gotoBuySMS))]
     ];
 }
 
@@ -158,6 +161,7 @@
     CustomActivatorViewController *vc = [[CustomActivatorViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 - (void)gotoAddScene {
     id<ThingSmartSceneProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingSmartSceneProtocol)];
     [impl addAutoScene:^(ThingSmartSceneModel *secneModel, BOOL addSuccess) {
@@ -177,19 +181,13 @@
 
 - (void)requestMallPage {
     id<ThingMallProtocol> mallImpl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingMallProtocol)];
-    [mallImpl checkIfMallEnableForCurrentUser:^(BOOL enable, NSError *error) {
-      if (error) {
-          [Alert showBasicAlertOnVC:self withTitle:@"" message:error.description];
-      } else {
-          // if enable is true
-          if (enable) {
-              [mallImpl requestMallPage:ThingMallPageTypeHome completionBlock:^(__kindof UIViewController *page, NSError *error) {
-                  [self.navigationController pushViewController:page animated:YES];
-              }];
-          } else {
-              [Alert showBasicAlertOnVC:self withTitle:@"" message:NSLocalizedString(@"Mall is Unavailable", nil)];
-          }
-      }
+    [mallImpl requestMallPage:ThingMallPageTypeHome completionBlock:^(__kindof UIViewController * _Nonnull page, NSError * _Nonnull error) {
+        if (error) {
+            [Alert showBasicAlertOnVC:self withTitle:@"" message:error.description];
+            return;
+        }
+        
+        [self.navigationController pushViewController:page animated:YES];
     }];
 }
 
@@ -236,6 +234,28 @@
 - (void)gotoMiniApp {
     // 以id形式打开小程序
     [[ThingMiniAppClient coreClient] openMiniAppByAppId:@"tydhopggfziofo1h9h"];
+}
+
+- (void)gotoBuyPhone {
+    id<ThingPersonalServiceProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingPersonalServiceProtocol)];
+    [impl requestPersonalService:ThingPersonalServiceTypePushCall completionBlock:^(__kindof UIViewController *page, NSError *error) {
+        if (page) {
+            [self.navigationController pushViewController:page animated:YES];
+        } else {
+            NSLog(@"request phone error %@", error);
+        }
+    }];
+}
+
+- (void)gotoBuySMS {
+    id<ThingPersonalServiceProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingPersonalServiceProtocol)];
+    [impl requestPersonalService:ThingPersonalServiceTypePushSMS completionBlock:^(__kindof UIViewController *page, NSError *error) {
+        if (page) {
+            [self.navigationController pushViewController:page animated:YES];
+        } else {
+            NSLog(@"request sms error %@", error);
+        }
+    }];
 }
 
 

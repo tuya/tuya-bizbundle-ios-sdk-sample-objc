@@ -20,6 +20,9 @@
 /* Class = "UITableViewSection"; headerTitle = "TuyaSmartCameraPanelBizBundle"; ObjectID = "EuV-Vb-iz9"; */
 "EuV-Vb-iz9.headerTitle" = "IPC UI 业务包";
 
+/* Class = "UITableViewSection"; headerTitle = "ThingSmartCloudServiceBizBundle"; ObjectID = "66f-Bl-1Zg"; */
+"66f-Bl-1Zg.headerTitle" = "IPC 增值服务 UI 业务包";
+
 /* Class = "UILabel"; text = "Device panel"; ObjectID = "H8l-M2-wET"; */
 "H8l-M2-wET.text" = "设备面板";
 
@@ -44,6 +47,9 @@
 /* Class = "UILabel"; text = "Camera paly back panel"; ObjectID = "Z7J-6D-pLR"; */
 "Z7J-6D-pLR.text" = "回放";
 
+/* Class = "UILabel"; text = "IPC Value-added services"; ObjectID = "gIk-Xa-iRl"; */
+"gIk-Xa-iRl.text" = "IPC增值服务";
+
 /* Class = "UITableViewSection"; headerTitle = "TuyaSmartMessageBizBundle"; ObjectID = "ZO8-Eb-9ke"; */
 "ZO8-Eb-9ke.headerTitle" = "消息中心 UI 业务包";
 
@@ -67,6 +73,9 @@
 
 /* Class = "UILabel"; text = "Activator"; ObjectID = "jyb-K5-lUu"; */
 "jyb-K5-lUu.text" = "配网";
+
+/* Class = "UILabel"; text = "Custom activator"; ObjectID = "CSI-RU-rIf"; */
+"CSI-RU-rIf.text" = "自定义配网";
 
 /* Class = "UILabel"; text = "Check update"; ObjectID = "nM6-3j-IXp"; */
 "nM6-3j-IXp.text" = "检查更新";
@@ -96,3 +105,14 @@
 "FbB-IV-vmr.text" = "编辑灯光场景";
 
 "Kk8-R2-XWC.text" = "分享文字到微信";
+
+"zyd-cK-HiU.headerTitle" = "主题色业务包";
+
+"Qtd-Lm-veL.text" = "主题设置";
+
+/* Class = "UILabel"; text = "电话"; ObjectID = "h14-O9-CI4"; */
+"h14-O9-CI4.text" = "电话";
+/* Class = "UILabel"; text = "短信"; ObjectID = "ZJ0-Og-JXe"; */
+"ZJ0-Og-JXe.text" = "短信";
+/* Class = "UITableViewSection"; headerTitle = "ThingAdvancedFunctionsBizBundle"; ObjectID = "hEG-vS-20j"; */
+"hEG-vS-20j.headerTitle" = "增值服务 UI 业务包";

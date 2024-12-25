@@ -9,6 +9,10 @@
 #import <UserNotifications/UserNotifications.h>
 #import <ThingModuleServices/ThingSmartMarketingServiceProtocol.h>
 
+#if __has_include(<ThingSmartCameraKit/ThingSmartCameraKit.h>)
+#import <ThingSmartCameraKit/ThingSmartCameraKit.h>
+#endif
+
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "AppDelegate.h"
 #import "AppKey.h"
@@ -28,6 +32,10 @@
     // Enable debug mode, which allows you to see logs.
     #ifdef DEBUG
     [[ThingSmartSDK sharedInstance] setDebugMode:YES];
+#if __has_include(<ThingSmartCameraKit/ThingSmartCameraKit.h>)
+    [[ThingSmartCameraSDK sharedInstance] setDebugMode:YES];
+#endif
+
     #else
     #endif
     

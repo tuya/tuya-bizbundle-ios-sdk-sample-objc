@@ -28,13 +28,6 @@
         self.window.rootViewController = nav;
     }
     [self.window makeKeyAndVisible];
-    
-    // Set to dark mode
-    if (@available(iOS 13.0, *)) {
-        id<ThingThemeManagerProtocol> theme = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingThemeManagerProtocol)];
-        [theme changeThemeStyle:UIUserInterfaceStyleDark];
-    }
-    
 }
 
 
