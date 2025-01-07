@@ -110,7 +110,7 @@ target 'tuya-bizbundle-ios-sample-objc_Example' do
   # [Optional] Special category
   pod 'ThingSmartCameraKit', '~> 6.0.0'
   pod 'ThingSmartOutdoorKit', '~> 6.0.0'
-  pod 'ThingSmartSweeperKit', '~> 5.3.0'
+  pod 'ThingSmartSweeperKit', '~> 6.0.0'
   pod 'ThingSmartLockKit', '~> 6.0.0'
   
 end
