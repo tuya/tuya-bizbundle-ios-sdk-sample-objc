@@ -11,6 +11,7 @@
 #import <ThingModuleServices/ThingModuleServices.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "DemoCameraVASRouteDispatcher.h"
+#import <ThingSmartBusinessLibrary/UINavigationController+ThingTransation.h>
 
 @interface DeviceListTableViewController () <ThingSmartHomeDelegate>
 @property (strong, nonatomic) ThingSmartHome *home;
@@ -104,7 +105,7 @@
 - (void)getPanelViewControllerWithDeviceModel:(ThingSmartDeviceModel *)deviceModel {
     id<ThingPanelProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingPanelProtocol)];
     [impl getPanelViewControllerWithDeviceModel:deviceModel initialProps:nil contextProps:nil completionHandler:^(__kindof UIViewController * _Nullable panelViewController, NSError * _Nullable error) {
-        [self.navigationController pushViewController:panelViewController animated:YES];
+        [self.navigationController thing_pushViewController:panelViewController animated:YES];
     }];
 }
 
@@ -126,7 +127,7 @@
     
     id<ThingPanelProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingPanelProtocol)];
     [impl getPanelViewControllerWithDeviceModel:deviceModel initialProps:nil contextProps:nil completionHandler:^(__kindof UIViewController * _Nullable panelViewController, NSError * _Nullable error) {
-        [self.navigationController pushViewController:panelViewController animated:YES];
+        [self.navigationController thing_pushViewController:panelViewController animated:YES];
     }];
 }
 
