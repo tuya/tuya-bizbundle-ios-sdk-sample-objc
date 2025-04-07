@@ -28,7 +28,7 @@ target 'tuya-bizbundle-ios-sample-objc_Example' do
   # Device pairing
   pod 'ThingSmartActivatorBizBundle', '~> 6.2.0'
   
-  # Device Panel (RN)
+  # Device panel (RN)
   pod 'ThingSmartPanelBizBundle', '~> 6.2.0'
   pod 'ThingSmartSpeakExtendBizBundle', '~> 6.2.0'
   pod 'ThingSmartSceneExtendBizBundle', '~> 6.2.0'
@@ -36,22 +36,22 @@ target 'tuya-bizbundle-ios-sample-objc_Example' do
   pod 'ThingSmartHealthExtendBizBundle', '~> 6.2.0'
   pod 'ThingSmartLangsExtraBizBundle', '~> 6.2.0'
   
-  # Device Panel (Mini Program)
+  # Device panel (Miniapp)
   pod "ThingSmartMiniAppBizBundle", '~> 6.2.0'
   pod 'ThingSmartBaseKitBizBundle', '~> 6.2.0'
   pod 'ThingSmartBizKitBizBundle', '~> 6.2.0'
   pod 'ThingSmartDeviceKitBizBundle', '~> 6.2.0'
   
-  # Device detail
- pod 'ThingSmartDeviceDetailBizBundle', '~> 6.2.0'
+  # Device details
+  pod 'ThingSmartDeviceDetailBizBundle', '~> 6.2.0'
   
-  # Device OTA
+  # Device OTA updates
   pod 'ThingSmartOTABizBundle', '~> 6.2.0'
   
   # Scene
   pod 'ThingSmartSceneBizBundle', '~> 6.2.0'
   
-  # Message Center
+  # Message center
   pod 'ThingSmartMessageBizBundle', '~> 6.2.0'
   
   # Camera
@@ -70,13 +70,13 @@ target 'tuya-bizbundle-ios-sample-objc_Example' do
   pod 'ThingSmartSettingBizBundle', '~> 6.2.0'
   
   #################
-  # Advanced Used
+  # Advanced features
   #################
 
-  # Voice Skill
+  # Voice skill
   pod 'ThingSmartSkillQuickBindBizBundle', '~> 6.2.0'
   
-  # Light Secene
+  # Light scene
   pod 'ThingSmartLightSceneBizBundle', '~> 6.2.0'
 
   # Marketing
@@ -98,14 +98,14 @@ target 'tuya-bizbundle-ios-sample-objc_Example' do
   pod 'ThingSmartBusinessExtensionKit', '~> 6.2.0'
   
   # [Optional] Bluetooth
-   pod 'ThingSmartBusinessExtensionKitBLEExtra','~> 6.2.0'
+  pod 'ThingSmartBusinessExtensionKitBLEExtra','~> 6.2.0'
   
   # [Optional] Matter
   pod 'ThingSmartMatterKit', '~> 5.20.0'
   pod 'ThingSmartMatterExtensionKit', '~> 5.17.0'
   pod 'ThingSmartBusinessExtensionKitMatterExtra','~> 6.2.0'
   
-  # [Optional] HomeKit Device
+  # [Optional] HomeKit device
   pod 'ThingSmartAppleDeviceKit', '~> 6.2.0'
   
   # [Optional] Special category
