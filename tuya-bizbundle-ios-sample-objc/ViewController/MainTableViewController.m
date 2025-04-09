@@ -15,6 +15,7 @@
 #import <ThingSmartMiniAppBizBundle/ThingSmartMiniAppBizBundle.h>
 #import "DemoBaseTableViewController.h"
 #import "ThemeManagerViewController.h"
+#import "ServiceListViewController.h"
 #import "tuya_bizbundle_ios_sample_objc_Example-Swift.h"
 
 @interface MainTableViewController () <ThingSmartHomeManagerDelegate>
@@ -78,7 +79,7 @@
         @[ACTION_NULL],
         
         @[ACTION(@selector(gotoThemeManager))],
-        @[ACTION(@selector(gotoBuyPhone)), ACTION(@selector(gotoBuySMS))]
+        @[ACTION(@selector(gotoServiceList)),ACTION(@selector(gotoBuyPhone)), ACTION(@selector(gotoBuySMS))]
     ];
 }
 
@@ -234,6 +235,10 @@
 - (void)gotoMiniApp {
     // 以id形式打开小程序
     [[ThingMiniAppClient coreClient] openMiniAppByAppId:@"tydhopggfziofo1h9h"];
+}
+
+- (void)gotoServiceList {
+    [self.navigationController pushViewController:[ServiceListViewController new] animated:YES];
 }
 
 - (void)gotoBuyPhone {
