@@ -104,8 +104,8 @@
 
 - (void)getPanelViewControllerWithDeviceModel:(ThingSmartDeviceModel *)deviceModel {
     id<ThingPanelProtocol> impl = [[ThingSmartBizCore sharedInstance] serviceOfProtocol:@protocol(ThingPanelProtocol)];
-    [impl getPanelViewControllerWithDeviceModel:deviceModel initialProps:nil contextProps:nil completionHandler:^(__kindof UIViewController * _Nullable panelViewController, NSError * _Nullable error) {
-        [self.navigationController thing_pushViewController:panelViewController animated:YES];
+    [impl gotoPanelViewControllerWithDevice:deviceModel group:nil initialProps:nil contextProps:nil completion:^(NSError * _Nullable error) {
+        NSLog(@"Error occurred while goto panel: %@", error.localizedDescription);
     }];
 }
 
