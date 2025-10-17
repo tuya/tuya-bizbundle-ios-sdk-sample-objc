@@ -55,6 +55,8 @@
 	<string>need open microphone</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>need open photo library</string>
+    <key>UIDesignRequiresCompatibility</key>
+    <true />
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
