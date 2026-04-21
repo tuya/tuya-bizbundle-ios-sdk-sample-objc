@@ -29,6 +29,11 @@
     // Initialize TuyaSmartSDK
     [[ThingSmartSDK sharedInstance] startWithAppKey:APP_KEY secretKey:APP_SECRET_KEY];
     
+    //强制App从左至右布局（仅支持iOS9
+    if (@available(iOS 9.0, *)) {
+        [UIView.appearance setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
+    }
+
     // Enable debug mode, which allows you to see logs.
     #ifdef DEBUG
     [[ThingSmartSDK sharedInstance] setDebugMode:YES];
