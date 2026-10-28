@@ -14,6 +14,7 @@
 #import "DeviceListTableViewController.h"
 #import <ThingSmartMiniAppBizBundle/ThingSmartMiniAppBizBundle.h>
 #import "DemoBaseTableViewController.h"
+#import "AIRecom/DemoAIRecomConfigViewController.h"
 #import "ThemeManagerViewController.h"
 #import "ServiceListViewController.h"
 #import "tuya_bizbundle_ios_sample_objc_Example-Swift.h"
@@ -82,6 +83,7 @@
         @[ACTION(@selector(gotoThemeManager))],
         @[ACTION(@selector(gotoServiceList)),ACTION(@selector(gotoBuyPhone)), ACTION(@selector(gotoBuySMS))],
         @[ACTION(@selector(openAIAssistant))],
+        @[ACTION(@selector(gotoAIRecomConfiguration))],
     ];
 }
 
@@ -263,6 +265,11 @@
             NSLog(@"request sms error %@", error);
         }
     }];
+}
+
+- (void)gotoAIRecomConfiguration {
+    DemoAIRecomConfigViewController *controller = [[DemoAIRecomConfigViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)openAIAssistant {

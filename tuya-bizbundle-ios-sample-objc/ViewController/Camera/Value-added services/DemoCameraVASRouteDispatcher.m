@@ -10,7 +10,7 @@
 
 #import <ThingSmartCameraKit/ThingSmartCameraKit.h>
 #import <ThingModuleManager/ThingModule.h>
-#import <ThingFoundationKit/NSLocale+ThingLanguage.h>
+#import <ThingSmartBaseKit/ThingSmartSDK+Language.h>
 
 @interface DemoCameraVASRouteDispatcher ()
 
@@ -22,7 +22,7 @@
 
 //增值服务
 - (void)openCameraVASPageWithDeviceModel:(ThingSmartDeviceModel *)deviceModel categoryCode:(ThingCameraVASCategoryCode)categoryCode completion:(void(^)(NSError * _Nullable error))completion {
-    ThingSmartCameraVASParams *cameraVASParams = [[ThingSmartCameraVASParams alloc] initWithSpaceId:deviceModel.homeId languageCode:Thing_SystemLanguage() hybridType:ThingCameraVASHybridTypeMiniApp categoryCode:categoryCode devId:deviceModel.devId extInfo:nil];
+    ThingSmartCameraVASParams *cameraVASParams = [[ThingSmartCameraVASParams alloc] initWithSpaceId:deviceModel.homeId languageCode:[ThingSmartSDK sharedInstance].currentAppLanguage hybridType:ThingCameraVASHybridTypeMiniApp categoryCode:categoryCode devId:deviceModel.devId extInfo:nil];
     [self.cameraVAS fetchValueAddedServiceUrlWithParams:cameraVASParams success:^(id<ThingSmartCameraVASResponse>_Nullable response) {
         [ThingModule.routeService openRoute:response.url withParams:nil];
         !completion ?: completion(nil);

@@ -141,3 +141,121 @@
 "Once turned on, it will follow the system to turn on or off dark mode." = "开启后，将跟随系统打开或关闭深色模式";
 
 "Turn on black mode" = "开启深色模式";
+
+/* AIRecom configuration demo */
+"AIRecom conversation configuration" = "AIRecom 对话配置";
+"AIRecom conversation demo" = "AIRecom 对话业务包";
+"Title logo (light)" = "顶部标题 Logo（浅色）";
+"Title logo (dark)" = "顶部标题 Logo（深色）";
+"Assistant image" = "助手形象";
+"Brand icon" = "品牌图标";
+"Assistant name" = "助手名称";
+"Welcome text" = "欢迎文案";
+"Input placeholder" = "输入框默认文案";
+"Send immediately" = "立即发送";
+"Open AIRecom conversation" = "打开 AIRecom 对话页";
+"Brand resources" = "品牌资源";
+"Assistant text" = "助手文案";
+"Entry parameters" = "入口参数";
+"JSON parameters" = "JSON 参数";
+"Initial message" = "初始消息";
+"Default" = "使用默认";
+"Invalid configuration" = "配置格式有误";
+"AIRecom conversation unavailable" = "暂时无法打开 AIRecom 对话页";
+"The AIRecom service is not available in this build." = "当前版本未提供 AIRecom 服务。";
+"Enter a local image asset name. Images apply when opening the conversation; leave blank to keep defaults." = "填写本地图片资源名；打开对话页时生效，留空使用默认图。";
+"Name and welcome text are language-entry overrides. Input placeholder edits ui_config.defaultInput, so it is configured only once." = "名称与欢迎文案对应多语言词条。输入框文案直接修改 ui_config.defaultInput，不重复配置。";
+"Source and openStyle use the current protocol values. Blank pid and deviceId mean unspecified." = "source 与 openStyle 使用现有协议值；pid、deviceId 留空表示不指定。";
+"JSON must be an object. ui_config supports prologue, defaultInput and shortcutList; ability supports supportImage, supportOnlineSearch, supportCall and supportVoice." = "JSON 顶层须为对象。ui_config 可填 prologue、defaultInput、shortcutList；ability 可填 supportImage、supportOnlineSearch、supportCall、supportVoice。";
+"Drafts are saved on this device. Brand images, content, openStyle and source apply when opening the conversation. send and the other settings are saved for later integration." = "配置保存在当前设备。品牌图片、content、openStyle、source 在打开对话页时生效；send 与其他配置先保存，后续接入生效。";
+"Enter a JSON object, for example {}. Leave blank to use defaults." = "请输入 JSON 对象，例如 {}；留空使用默认。";
+"Enter a local image asset name. Leave blank to keep the default resource." = "填写本地图片资源名；留空保留默认资源。";
+"Enter the value. Leave blank to keep defaults. content is kept exactly as entered." = "填写参数值；留空使用默认。content 按原文保存。";
+"Enter valid JSON with an object at the top level, such as {}." = "请输入合法 JSON，顶层必须是对象，例如 {}。";
+"ui_config.defaultInput must be a string." = "ui_config.defaultInput 必须是字符串。";
+"Subscription entry badge (light)" = "订阅入口（浅色）";
+"Subscription entry badge (dark)" = "订阅入口（深色）";
+"Settings membership badge" = "设置页会员标";
+"Local image not found: %@" = "找不到本地图片资源：%@";
+
+"Applied once at app startup. Restart the demo after editing. Unspecified fields use defaults; enable is internal and cannot be configured." = "启动时应用一次，修改后重启 demo 生效。未填写的字段使用默认值；enable 为内部开关，不可配置。";
+"Enter a JSON object, for example {\"entries_ai_bar\": false, \"show_subscription_entry\": false}. Do not include enable. Restart the demo to apply changes." = "填写 JSON 对象，例如 {\"entries_ai_bar\": false, \"show_subscription_entry\": false}。不要填写 enable；修改后重启 demo 生效。";
+"enable is internal to AIRecom and cannot be configured." = "enable 是 AIRecom 内部开关，不可配置。";
+
+"Device panel logo" = "设备面板助手 Logo";
+"Chat title logo (black, light mode)" = "对话页中间 Logo（黑图，浅色模式）";
+"Chat title logo (white, dark mode)" = "对话页中间 Logo（白图，深色模式）";
+"Configure welcome_content/input_placeholder as language keys, is_plus_open and aibar. Providing aibar defaults is_support_aibar to true and type to append; omit aibar to inherit. false is explicit. Restart the demo after editing." = "配置欢迎语和占位词条标识、Plus 开关及 AIBar。提供 aibar 时 is_support_aibar 默认为 true、type 默认为 append；不传 aibar 则沿用下层配置。false 为明确关闭。修改后重启 demo 生效。";
+"Enter local image asset names. Use black/white title logos for light/dark mode; both are language-independent and scale to fit. @3x sizes: assistant logo 108x108; title 285x60; subscription badge 150x78; membership badge 234x105. Restart after editing." = "填写本地图片资源名。标题 Logo 浅色模式用黑图、深色模式用白图，不区分语言，按比例自适应。@3x 尺寸：助手 Logo 建议 108×108；标题建议 285×60；订阅入口建议 150×78；会员标建议 234×105。修改后重启生效。";
+"Set pid only for a device entry; leave blank for a general conversation." = "设备面板入口填写产品 PID，通用入口留空。";
+"content is prefilled. send defaults to false; automatic sending requires nonblank content and send=true." = "content 预填到输入框；send 默认 false。只有内容非空且 send=true 时自动发送。";
+"Unknown AIRecomConfig field." = "存在未开放的 AIRecomConfig 字段。";
+"Language keys must be strings." = "多语言词条标识必须为字符串。";
+"Switch values must be JSON true or false." = "开关必须为 JSON true 或 false。";
+"aibar must be an object." = "aibar 必须为 JSON 对象。";
+"Unknown aibar field." = "存在未开放的 aibar 字段。";
+"aibar.type must be append or float." = "aibar.type 只能为 append 或 float。";
+"pid_blacklist must be a string array." = "pid_blacklist 必须为字符串数组。";
+"Example: {\"is_plus_open\":false,\"welcome_content\":\"my_welcome_key\",\"aibar\":{\"is_support_aibar\":true,\"type\":\"append\",\"pid_blacklist\":[]}}. Restart to apply." = "示例：{\"is_plus_open\":false,\"welcome_content\":\"my_welcome_key\",\"aibar\":{\"is_support_aibar\":true,\"type\":\"append\",\"pid_blacklist\":[]}}。修改后重启生效。";
+
+
+"Assistant logo (all entries)" = "助手 Logo（所有入口）";
+
+"Opening welcome language key" = "开场欢迎语词条";
+"Input placeholder language key" = "输入框占位词条";
+"Plus entries" = "Plus 订阅入口";
+"AIBar configuration" = "AIBar 配置";
+"Enable AIBar" = "启用 AIBar";
+"AIBar style" = "AIBar 展示方式";
+"PID exceptions" = "PID 例外列表";
+"Custom (replace all)" = "自定义（整组覆盖）";
+"Enabled" = "开启";
+"Disabled" = "关闭";
+"Append" = "底部拼接（Append）";
+"Float" = "悬浮（Float）";
+"No PID exceptions" = "无 PID 例外";
+"Default: enabled, Append, no PID exceptions. Custom replaces the entire AIBar configuration; omitted members use these initial values. Listed PIDs invert the enable switch. AIBar is displayed in device panels, not on this configuration page." = "默认开启、底部拼接、无 PID 例外。选择自定义后整组覆盖 AIBar，未设置的字段使用上述初始值。开关开启时列表中的 PID 关闭；开关关闭时只有列表中的 PID 开启。AIBar 在设备面板中展示。";
+"Use local image asset names. Blank title logos use placeholders; other blank images use built-in resources. Title logos are language-independent. Recommended @3x: logo 108x108, title 285x60, subscription 150x78, membership 234x105. Restart after editing." = "填写本地图片资源名。标题 Logo 留空使用占位图，其他图片留空使用内置资源。标题不区分语言，浅色模式用黑图、深色模式用白图。@3x 建议尺寸：助手 108×108、标题 285×60、订阅入口 150×78、会员标 234×105。修改后重启生效。";
+"Enter a JSON array of nonempty PID strings, for example [\"pid1\", \"pid2\"]. Blank or [] means no exceptions. Listed PIDs invert is_support_aibar." = "填写非空 PID 字符串数组，例如 [\"pid1\", \"pid2\"]。留空或 [] 表示无例外。列表中的 PID 使用与 is_support_aibar 相反的开关值。";
+"PID exceptions must be a JSON array of nonempty strings." = "PID 例外列表必须是 JSON 数组，每项为非空字符串。";
+
+"Replacement image selected" = "已勾选替换图";
+
+"AIRecom settings" = "AIRecom 配置";
+
+"Welcome applies to the opening animation. Text values are language keys; missing translations display the key itself. Blank text uses defaults. Plus defaults to enabled. Tap Save configuration after editing." = "欢迎语用于开场欢迎动画。填写多语言词条，找不到翻译时显示词条本身；留空使用默认文案。Plus 默认开启。修改后请点击“保存配置”。";
+"Tap each image row to select a built-in demo replacement. Unchecked uses the BizBundle default; title defaults are placeholders. Previews use the matching light or dark background. Tap Save configuration to apply selections. @3x: logo 108x108, title 285x60, subscription 150x78, membership 234x105." = "点击每行勾选内置示例图，取消勾选使用业务包默认图；标题默认是占位图。预览底色对应浅色或深色模式。点击“保存配置”后生效。@3x 尺寸：助手 108×108、标题 285×60、订阅入口 150×78、会员标 234×105。";
+"Enter a multilingual resource key. Missing translations display the key itself; blank keeps the default. welcome_content is used by the opening welcome animation. Tap Done to return, then Save configuration to apply changes." = "填写多语言词条。找不到翻译时显示词条本身；留空使用默认文案。welcome_content 用于开场欢迎动画。点击“完成”返回后，再点击“保存配置”生效。";
+
+"Save configuration" = "保存配置";
+"Open page" = "打开页面";
+"Open page parameters" = "打开页面参数";
+"Configuration saved" = "配置已保存";
+"Unable to save configuration" = "暂时无法保存配置";
+"The configuration could not be saved. Please try again." = "配置保存失败，请重试。";
+"Saved settings apply to newly opened conversations and device panels, and will be restored on the next app launch." = "已保存并应用配置，新打开的对话页和设备面板会使用该配置；下次启动 App 时自动恢复。";
+"Save applies the settings and images above to newly opened conversations and device panels. Saved configuration is restored on app launch. Existing views are not refreshed automatically." = "保存上方的功能配置和图片，对新打开的对话页和设备面板生效。App 启动时自动恢复已保存配置；已显示的视图不会自动刷新。";
+"The parameters below are used only when opening the page. Set pid for a device entry; leave it blank for a general conversation. Opening the page does not save configuration changes." = "下方参数仅用于本次打开页面。设备面板入口填写产品 PID，通用入口留空。打开页面不会保存上方尚未保存的配置。";
+
+"Opening welcome animation language key. Blank uses the default; missing translations display the key. Tap Save configuration to apply." = "开场欢迎动画的多语言词条。留空使用默认文案，找不到翻译时显示词条。修改后点击“保存配置”生效。";
+"Input placeholder language key. Blank uses the default; missing translations display the key. Tap Save configuration to apply." = "输入框占位文案的多语言词条。留空使用默认文案，找不到翻译时显示词条。修改后点击“保存配置”生效。";
+"Controls subscription entries in the conversation and settings pages. Defaults to enabled." = "控制对话页和设置页的订阅入口，默认开启。";
+"AIBar appears in device panels. Default: enabled, Append, no PID exceptions. Custom replaces the entire group." = "AIBar 在设备面板中展示。默认开启、底部拼接、无 PID 例外。选择自定义后整组覆盖配置。";
+"Enables AIBar in device panels. Defaults to enabled; listed PID exceptions use the opposite value." = "控制设备面板是否展示 AIBar，默认开启。PID 例外列表中的产品使用相反的开关值。";
+"AIBar layout in device panels: Append or Float. Defaults to Append." = "设备面板中 AIBar 的展示方式：底部拼接（Append）或悬浮（Float），默认底部拼接。";
+"JSON array of nonempty product PIDs, e.g. [\"pid1\", \"pid2\"]. Listed PIDs invert the enable switch. Blank or [] means no exceptions." = "填写产品 PID 数组，例如 [\"pid1\", \"pid2\"]。列表中的产品使用与开关相反的值，留空或 [] 表示无例外。";
+"Shared assistant logo for all entries. Recommended @3x: 108x108. Tap to select the demo image; unchecked uses the default." = "所有入口共用的助手 Logo，@3x 建议 108×108。点击勾选示例图，取消勾选使用默认图。";
+"Centered conversation title logo in light mode. Use black artwork, recommended @3x: 285x60. Language-independent and scaled to fit; unchecked uses a placeholder." = "浅色模式下对话页顶部中间的 Logo，使用黑图，@3x 建议 285×60。不区分语言，自动适应大小，未勾选时使用占位图。";
+"Centered conversation title logo in dark mode. Use white artwork, recommended @3x: 285x60. Language-independent and scaled to fit; unchecked uses a placeholder." = "深色模式下对话页顶部中间的 Logo，使用白图，@3x 建议 285×60。不区分语言，自动适应大小，未勾选时使用占位图。";
+"Top-right conversation subscription badge in light mode. Recommended @3x: 150x78. Tap to select the demo image; unchecked uses the default." = "浅色模式下对话页顶部右侧的订阅入口图片，@3x 建议 150×78。点击勾选示例图，取消勾选使用默认图。";
+"Top-right conversation subscription badge in dark mode. Recommended @3x: 150x78. Tap to select the demo image; unchecked uses the default." = "深色模式下对话页顶部右侧的订阅入口图片，@3x 建议 150×78。点击勾选示例图，取消勾选使用默认图。";
+"Membership badge on the settings page. Recommended @3x: 234x105. Tap to select the demo image; unchecked uses the default." = "设置页的会员标图片，@3x 建议 234×105。点击勾选示例图，取消勾选使用默认图。";
+"Product PID for a device-panel entry, not a device ID. Leave blank for a general conversation." = "设备面板入口对应的产品 PID，不是设备 ID。通用对话入口留空。";
+"Initial text prefilled in the input box, kept exactly as entered. Automatic sending is controlled by send." = "预填到输入框的初始内容，按原文保留。是否自动发送由 send 控制。";
+"Defaults to false. Automatically sends only when enabled and content contains nonblank text." = "默认关闭。仅在开启且 content 含非空白内容时自动发送。";
+"Saves and applies the settings and images above. Restored on app launch; newly opened views use them. Existing views are not refreshed." = "保存并应用上方的功能配置和图片，启动 App 时自动恢复。对新打开的页面生效，已显示的视图不会自动刷新。";
+"Opens the conversation with the current pid, content and send. Does not save pending configuration changes." = "使用当前 pid、content、send 打开对话页，不会自动保存尚未提交的配置。";
+"Help for %@" = "%@ 的说明";
+"Assistant logo" = "助手 Logo";
+
+"Business configuration" = "业务配置";

@@ -13,6 +13,7 @@
 #import <ThingSmartBizCore/ThingSmartBizCore.h>
 #import <ThingSmartDeviceKit/ThingSmartDeviceKit.h>
 //#import <ThingLightSceneKit/ThingLightSceneModel.h>
+#import <ThingModuleServices/ThingLightSceneBizProtocol.h>
 
 @interface LightSceneListTableViewController ()
 @property (strong, nonatomic) ThingSmartHome *home;

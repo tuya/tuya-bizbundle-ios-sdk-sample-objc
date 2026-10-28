@@ -8,7 +8,6 @@
 
 #import "ThemeManagerViewController.h"
 #import <ThingModuleServices/ThingModuleServices.h>
-#import <ThingFoundationKit/ThingFoundationKit.h>
 
 @interface ThemeManagerViewController ()
 @property (nonatomic, strong) UIView * followSystemThemeView;

@@ -116,3 +116,7 @@
 "ZJ0-Og-JXe.text" = "短信";
 /* Class = "UITableViewSection"; headerTitle = "ThingAdvancedFunctionsBizBundle"; ObjectID = "hEG-vS-20j"; */
 "hEG-vS-20j.headerTitle" = "增值服务 UI 业务包";
+
+/* AIRecom configuration entry */
+"AiC-cf-Gs0.headerTitle" = "AIRecom 对话业务包";
+"AiC-cf-Gl0.text" = "AIRecom 对话配置";

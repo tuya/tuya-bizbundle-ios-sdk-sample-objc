@@ -16,6 +16,7 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "AppDelegate.h"
 #import "AppKey.h"
+#import "ViewController/AIRecom/DemoAIRecomConfigViewController.h"
 
 
 @interface AppDelegate () <UINavigationControllerDelegate>
@@ -28,6 +29,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Initialize TuyaSmartSDK
     [[ThingSmartSDK sharedInstance] startWithAppKey:APP_KEY secretKey:APP_SECRET_KEY];
+    // Apply feature settings once, before displaying any AIRecom entry or page.
+    [DemoAIRecomConfigViewController applySavedAIRecomConfiguration];
     
     //强制App从左至右布局（仅支持iOS9
     if (@available(iOS 9.0, *)) {
